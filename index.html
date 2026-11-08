@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>同心圆分类导航 · 中国 AI 工具（官网直达）</title>
-<meta name="description" content="同心圆分类导航：对话、视频、图像、编程四类共 20 个中国 AI 工具，悬停展开二级分类，点击卡片直达官网。">
+<title>同心圆分类导航 · 中国互联网工具目录</title>
+<meta name="description" content="同心圆分类导航：11 个分类、48 个子类、400+ 真实站点，悬停展开同心圆，点击直达官网。">
 <link rel="canonical" href="https://boyue.ai/">
 <meta name="robots" content="index,follow">
 <style>
@@ -17,9 +17,9 @@ body{background:var(--bg);color:var(--ink);overflow:hidden;font-family:"PingFang
 
 /* 左侧常驻竖向导航 */
 #bar{position:fixed;left:28px;top:max(4vh,calc(env(safe-area-inset-top,0px) + 8px));bottom:4vh;width:96px;z-index:6;border-radius:18px;background:var(--bar);border:2px solid var(--orb);box-shadow:0 8px 30px rgba(0,0,0,.18)}
-#bar .t{position:absolute;top:18px;left:0;right:0;text-align:center;color:#fff;font-size:22px;font-weight:700;letter-spacing:.1em}
-#items{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px}
-#bar .node{width:72px;padding:9px 0}
+#bar .t{position:absolute;top:15px;left:0;right:0;text-align:center;color:#fff;font-size:17px;font-weight:700;letter-spacing:.12em}
+#items{height:100%;padding-top:46px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;overflow-y:auto;scrollbar-width:none}
+#bar .node{width:70px;padding:4px 0;font-size:12.5px}
 
 /* 同心圆舞台 */
 #stage{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
@@ -41,6 +41,19 @@ body{background:var(--bg);color:var(--ink);overflow:hidden;font-family:"PingFang
 .hint h2{margin:0 0 8px;font-size:20px}
 .hint ol{margin:0;padding-left:1.2em}
 
+/* 全站搜索 */
+.search{position:fixed;right:6vw;top:max(28px,calc(env(safe-area-inset-top,0px) + 20px));width:min(340px,28vw);z-index:40}
+.search input{width:100%;padding:11px 14px;font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1.5px solid var(--ring);border-radius:10px;outline:none}
+.search input:focus{border-color:var(--or);box-shadow:0 0 0 3px color-mix(in srgb,var(--or) 22%,transparent)}
+#hits{position:absolute;left:0;right:0;top:calc(100% + 6px);max-height:56vh;overflow:auto;background:var(--bg);border:1.5px solid var(--ring);border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.18);display:none}
+#hits.on{display:block}
+#hits a{display:flex;flex-direction:column;gap:2px;padding:9px 13px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--d1)}
+#hits a:last-child{border-bottom:0}
+#hits a:hover,#hits a.sel{background:var(--d1)}
+#hits b{font-size:14px;font-weight:600}
+#hits span{font-size:11.5px;opacity:.6}
+#hits .empty{padding:14px;font-size:13px;opacity:.6}
+
 /* 点击后的全屏内容：从点击位置圆形展开 */
 .view{position:fixed;inset:0;z-index:30;background:var(--bg);overflow:auto;padding:max(36px,calc(env(safe-area-inset-top,0px) + 16px)) 6vw 48px;clip-path:circle(0px at var(--x,50%) var(--y,50%));pointer-events:none;transition:clip-path .8s cubic-bezier(.65,0,.2,1)}
 .view.open{clip-path:circle(160vmax at var(--x,50%) var(--y,50%));pointer-events:auto}
@@ -51,6 +64,9 @@ body{background:var(--bg);color:var(--ink);overflow:hidden;font-family:"PingFang
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
 .card{aspect-ratio:4/3;border-radius:16px;color:#fff;padding:16px;font-weight:700;font-size:18px;display:flex;align-items:flex-end;animation:up .5s backwards;animation-delay:calc(var(--i)*45ms + 450ms)}
 .grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.card.link{flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:4px;cursor:pointer;transition:translate .2s,box-shadow .2s}
+.card.link:hover{translate:0 -3px;box-shadow:0 14px 36px rgba(0,0,0,.28)}
+.card.link .cnt{font-size:12.5px;font-weight:500;opacity:.85}
 .card.tool{flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:4px;text-decoration:none;aspect-ratio:auto;min-height:190px;transition:translate .2s,box-shadow .2s}
 .card.tool:hover{translate:0 -3px;box-shadow:0 14px 36px rgba(0,0,0,.28)}
 .card.tool .tname{font-size:20px}
@@ -62,10 +78,15 @@ body{background:var(--bg);color:var(--ink);overflow:hidden;font-family:"PingFang
 @keyframes fade{from{opacity:0}}
 @keyframes up{from{opacity:0;translate:0 16px}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-@media (max-width:760px){.hint{display:none}}
+@media (max-width:760px){.hint{display:none}.search{right:16px;left:16px;width:auto}
+  #bar{left:16px;width:88px;top:calc(env(safe-area-inset-top,0px) + 84px);bottom:3vh}}
 </style>
 </head>
 <body>
+<div class="search">
+  <input id="q" type="search" placeholder="搜索站点、功能、关键词…" autocomplete="off" aria-label="搜索站点">
+  <div id="hits" role="listbox"></div>
+</div>
 <aside class="hint">
   <h2>同心圆分类导航</h2>
   <ol>
@@ -88,35 +109,23 @@ body{background:var(--bg);color:var(--ink);overflow:hidden;font-family:"PingFang
 <div class="view" id="view"></div>
 
 <script>
-const DATA={
- 对话:{通用助手:['DeepSeek','豆包','腾讯元宝','智谱清言','文心一言'],长文本:['Kimi','讯飞星火'],开源模型:['通义千问','百川','腾讯混元']},
- 视频:{文生视频:['可灵','海螺','即梦'],图生视频:['Vidu']},
- 图像:{图像创作:['HiDream','通义万相']},
- 编程:{编程助手:['通义灵码','文心快码','CodeGeeX'],模型API:['阶跃星辰']}
-};
-// 每个工具的真实官网与简介（点击第三层直接跳官网，第二层全屏列出）
-const TOOLS={
- 'DeepSeek':{t:'LLM / 推理',u:'https://www.deepseek.com',d:'开源推理模型，V3 对齐 GPT-4 级基准，R1 长于数学与代码。',p:'网页免费 · API $0.07–0.25/百万 tokens'},
- '豆包':{t:'LLM / 语音',u:'https://www.doubao.com',d:'字节跳动旗下助手，语音合成与实时翻译成熟。',p:'免费 + 订阅档'},
- '腾讯元宝':{t:'LLM / 办公',u:'https://yuanbao.tencent.com',d:'接入混元与 DeepSeek，长文档与办公场景顺手。',p:'免费 + 订阅档'},
- '智谱清言':{t:'LLM / Agent',u:'https://chatglm.cn',d:'AutoGLM 可自主操作浏览器与应用，ChatGLM 系列开源。',p:'免费 + API 按量'},
- '文心一言':{t:'LLM / 多模态',u:'https://yiyan.baidu.com',d:'百度文心大模型对话产品，中文问答与图文理解见长。',p:'免费 + 会员'},
- 'Kimi':{t:'LLM / 长文',u:'https://kimi.moonshot.cn',d:'月之暗面助手，超长上下文，擅文档解析与长篇写作。',p:'免费 + Pro 订阅'},
- '讯飞星火':{t:'LLM / 语音',u:'https://xinghuo.xfyun.cn',d:'科大讯飞大模型，中文语音识别与实时翻译为强项。',p:'免费 + Pro 订阅'},
- '通义千问':{t:'LLM / 开源',u:'https://chat.qwen.ai',d:'阿里开源多语言模型，代码与推理强，含视觉变体。',p:'开源 + API 按量'},
- '百川':{t:'LLM / 企业',u:'https://www.baichuan-ai.com',d:'面向企业的模型，提供医疗、法律等领域微调版本。',p:'企业授权'},
- '腾讯混元':{t:'LLM / 开源',u:'https://hunyuan.tencent.com',d:'腾讯自研大模型，提供开源权重与多模态能力。',p:'免费体验 + API'},
- '可灵':{t:'视频生成',u:'https://klingai.com',d:'快手文生视频，1080p、长镜头与物理模拟突出。',p:'免费额度 + Pro 订阅'},
- '海螺':{t:'视频 + 音乐',u:'https://hailuoai.com',d:'MiniMax 旗下，文生视频与 AI 音乐，跨镜头一致性好。',p:'按积分计费'},
- '即梦':{t:'视频 + 图像',u:'https://jimeng.jianying.com',d:'字节跳动创作平台，视频与图像生成一体。',p:'免费额度 + 订阅'},
- 'Vidu':{t:'视频生成',u:'https://www.vidu.com',d:'生数科技视频模型，图生视频与参考一致性能力。',p:'免费额度 + 订阅'},
- 'HiDream':{t:'图像生成',u:'https://hidreamai.com',d:'高分辨率图像生成，中英文提示词文字还原准确。',p:'按积分计费'},
- '通义万相':{t:'图像 / 视频',u:'https://tongyi.aliyun.com/wanxiang/',d:'阿里图像与视频生成平台，电商场景素材见长。',p:'免费额度 + 按量'},
- '通义灵码':{t:'编码助手',u:'https://lingma.aliyun.com',d:'阿里云 AI 编码助手，补全、单测生成与仓库问答。',p:'个人免费 + 企业版'},
- '文心快码':{t:'编码助手',u:'https://comate.baidu.com',d:'百度 AI 编码助手，多语言补全与研发问答。',p:'免费 + 企业版'},
- 'CodeGeeX':{t:'编码助手',u:'https://codegeex.cn',d:'智谱开源代码模型，补全、翻译与 IDE 插件。',p:'免费 + 企业版'},
- '阶跃星辰':{t:'多模态 API',u:'https://platform.stepfun.com',d:'多模态大模型开放平台，文本、视觉与语音 API。',p:'按量计费'}
-};
+// 数据来自 data.json：categories[].subs[].sites[]（改数据只改这一个文件）
+let DATA={},TOOLS={},ALL=[];
+async function loadData(){
+  const res=await fetch('./data.json',{cache:'no-cache'});
+  const d=await res.json();
+  d.categories.forEach(c=>{
+    DATA[c.name]={};
+    c.subs.forEach(s=>{
+      DATA[c.name][s.name]=s.sites.map(x=>x.n);
+      s.sites.forEach(x=>{
+        TOOLS[x.n]={u:x.u,d:x.d,t:x.t};
+        ALL.push({n:x.n,u:x.u,d:x.d,t:x.t,cat:c.name,sub:s.name});
+      });
+    });
+  });
+  return ALL.length;
+}
 const $=s=>document.querySelector(s), NS='http://www.w3.org/2000/svg';
 const bar=$('#bar'),items=$('#items'),L2=$('#l2'),L3=$('#l3'),g1=$('#g1'),g2=$('#g2'),d1=$('#d1'),d2=$('#d2'),view=$('#view');
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)), rad=d=>d*Math.PI/180;
@@ -180,7 +189,10 @@ function openB(n){            // 悬停第一层类目 → 下一层同心圆
   const b=n.dataset.n; if(S.b===b) return;
   closeB(); S.b=b; n.classList.add('on'); d2.classList.add('open');
   const pc={x:parseFloat(n.style.left),y:parseFloat(n.style.top),w:n.offsetWidth,h:n.offsetHeight};
-  fan(DATA[S.a][b],(G.R1+G.R2)/2,+n.dataset.ang,rad(10),rad(70),3,[S.a,b],L3,g2,pc);
+  const kids=DATA[S.a][b], cap=8;
+  // 环上最多放 12 个，多出的收进「更多」节点，点它看全屏列表
+  const shown=kids.length>cap?kids.slice(0,cap-1).concat(`更多 ${kids.length-cap+1} 个`):kids;
+  fan(shown,(G.R1+G.R2)/2,+n.dataset.ang,rad(10),rad(70),3,[S.a,b],L3,g2,pc);
 }
 const act=n=>+n.dataset.lv===1?openA(n):+n.dataset.lv===2&&openB(n);
 
@@ -193,11 +205,11 @@ document.addEventListener('mouseover',e=>{
 
 // 点击类目 → 全屏内容，从点击处圆形展开
 function openView(p,x,y){
-  // 第三层是具体工具：直接去官网
+  // 第三层是具体工具：直接去官网；「更多 N 个」节点展开全屏列表
   if(p.length===3){
     const tool=TOOLS[p[2]];
-    if(tool) window.open(tool.u,'_blank','noopener');
-    return;
+    if(tool){window.open(tool.u,'_blank','noopener');return}
+    p=p.slice(0,2);
   }
   const kids=p.length===1?Object.keys(DATA[p[0]]):DATA[p[0]][p[1]];
   const h0=p.join('').length*29;
@@ -210,8 +222,8 @@ function openView(p,x,y){
         <span class="tdesc">${t.d||''}</span>
         <span class="tprice">${t.p||''} · 访问官网 ↗</span>
       </a>`}).join('')
-    : kids.map((k,i)=>{const h=(i*43+h0)%360;
-      return `<div class="card" style="--i:${i};background:linear-gradient(135deg,hsl(${h} 60% 52%),hsl(${(h+40)%360} 65% 38%))">${k}</div>`}).join('');
+    : kids.map((k,i)=>{const h=(i*43+h0)%360,n=(DATA[p[0]][k]||[]).length;
+      return `<div class="card link" data-p="${p[0]}|${k}" style="--i:${i};background:linear-gradient(135deg,hsl(${h} 60% 52%),hsl(${(h+40)%360} 65% 38%))">${k}<span class="cnt">${n} 个站点 →</span></div>`}).join('');
   view.innerHTML=`<button class="x" aria-label="关闭">✕</button>
     <div class="crumb">${p.join(' / ')}</div><h1>${p[p.length-1]}</h1>
     <p class="sub">${p.length<2?`共 ${kids.length} 个子类`:`共 ${kids.length} 个工具，点击卡片直达官网`}</p>
@@ -222,6 +234,8 @@ function openView(p,x,y){
 }
 document.addEventListener('click',e=>{
   if(e.target.closest('.x')){view.classList.remove('open');return}
+  const lk=e.target.closest('#view .card.link');
+  if(lk){openView(lk.dataset.p.split('|'),innerWidth/2,innerHeight/2);return}
   const n=e.target.closest('.node'); if(!n) return;
   // 触屏没有 hover：第一次点击先展开，再次点击进入
   if(matchMedia('(hover:none)').matches&&+n.dataset.lv<3&&!n.classList.contains('on')){act(n);return}
@@ -230,13 +244,52 @@ document.addEventListener('click',e=>{
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape')view.classList.remove('open')});
 
-Object.keys(DATA).forEach(c=>{
-  const e=document.createElement('div');
-  e.className='node'; e.textContent=c; Object.assign(e.dataset,{lv:1,n:c,p:c});
-  items.appendChild(e);
+// 全站搜索：跨所有分类按名称/简介/类型匹配
+const q=$('#q'),hits=$('#hits');
+let hitList=[],sel=-1;
+function search(){
+  const k=q.value.trim().toLowerCase();
+  if(!k){hits.classList.remove('on');hits.innerHTML='';hitList=[];return}
+  hitList=ALL.filter(s=>(s.n+' '+s.d+' '+s.t+' '+s.cat+' '+s.sub).toLowerCase().includes(k)).slice(0,30);
+  sel=-1;
+  hits.innerHTML=hitList.length
+    ? hitList.map((s,i)=>`<a id="hit${i}" href="${s.u}" target="_blank" rel="noopener noreferrer"><b>${s.n}</b><span>${s.cat} / ${s.sub} · ${s.d}</span></a>`).join('')
+    : '<div class="empty">没有匹配的站点，换个关键词试试</div>';
+  hits.classList.add('on');
+}
+q.addEventListener('input',search);
+q.addEventListener('focus',()=>{if(q.value.trim())search()});
+q.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){hits.classList.remove('on');q.blur();return}
+  if(!hitList.length)return;
+  if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+    e.preventDefault();
+    sel=(sel+(e.key==='ArrowDown'?1:-1)+hitList.length)%hitList.length;
+    hits.querySelectorAll('a').forEach((a,i)=>a.classList.toggle('sel',i===sel));
+    hits.querySelector('a.sel')?.scrollIntoView({block:'nearest'});
+  }
+  if(e.key==='Enter'){e.preventDefault();const t=hitList[sel<0?0:sel];if(t)window.open(t.u,'_blank','noopener')}
 });
-geom();
-addEventListener('resize',()=>{geom();closeAll()});
+document.addEventListener('click',e=>{if(!e.target.closest('.search'))hits.classList.remove('on')});
+
+function init(count){
+  document.title=`同心圆分类导航 · ${count} 个真实站点`;
+  const md=document.querySelector('meta[name=description]');
+  if(md) md.content=`同心圆分类导航：${Object.keys(DATA).length} 个分类、${count} 个真实站点，悬停展开同心圆，点击直达官网。`;
+  Object.keys(DATA).forEach(c=>{
+    const e=document.createElement('div');
+    e.className='node'; e.textContent=c; Object.assign(e.dataset,{lv:1,n:c,p:c});
+    items.appendChild(e);
+  });
+  q.placeholder=`搜索 ${count} 个站点…`;
+  geom();
+  addEventListener('resize',()=>{geom();closeAll()});
+}
+loadData().then(init).catch(err=>{
+  const h=document.querySelector('.hint');
+  if(h) h.innerHTML='<h2>数据加载失败</h2><p>刷新重试</p>';
+  console.error(err);
+});
 </script>
 </body>
 </html>
