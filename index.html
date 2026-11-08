@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>同心圆分类导航</title>
+<style>
+:root{--bg:#fff;--ink:#0f2a38;--bar:#175f82;--ring:#1a5f7a;--d1:rgba(26,95,122,.08);--d2:rgba(26,95,122,.045);--or:#e8722f;--orb:#12303f;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a22;--ink:#e6eef3;--bar:#1b6b91;--ring:#5aa7c9;--d1:rgba(90,167,201,.13);--d2:rgba(90,167,201,.07);--or:#f0803f;--orb:#06121a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1a22;--ink:#e6eef3;--bar:#1b6b91;--ring:#5aa7c9;--d1:rgba(90,167,201,.13);--d2:rgba(90,167,201,.07);--or:#f0803f;--orb:#06121a;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);overflow:hidden;font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif}
+
+/* 左侧常驻竖向导航 */
+#bar{position:fixed;left:28px;top:max(4vh,calc(env(safe-area-inset-top,0px) + 8px));bottom:4vh;width:96px;z-index:6;border-radius:18px;background:var(--bar);border:2px solid var(--orb);box-shadow:0 8px 30px rgba(0,0,0,.18)}
+#bar .t{position:absolute;top:18px;left:0;right:0;text-align:center;color:#fff;font-size:22px;font-weight:700;letter-spacing:.1em}
+#items{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px}
+#bar .node{width:72px;padding:9px 0}
+
+/* 同心圆舞台 */
+#stage{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.disc{position:absolute;border-radius:50%;border:1.5px solid var(--ring);opacity:0;scale:.15;pointer-events:none;transition:scale .55s cubic-bezier(.2,.9,.25,1),opacity .35s}
+.disc.open{opacity:1;scale:1;pointer-events:auto}
+#d1{background:var(--d1);z-index:2}
+#d2{background:var(--d2);z-index:1}
+#lines{position:absolute;inset:0;width:100%;height:100%;z-index:3;color:var(--ring);pointer-events:none}
+#lines line{stroke:currentColor;stroke-width:1.6;opacity:.6;animation:fade .45s .1s backwards}
+.box{position:absolute;inset:0;z-index:4;pointer-events:none}
+
+/* 类目节点 */
+.node{background:var(--or);color:#fff;border:2px solid var(--orb);border-radius:9px;font-size:14px;font-weight:600;text-align:center;white-space:nowrap;cursor:pointer;user-select:none;pointer-events:auto;transition:background .2s,box-shadow .2s,scale .2s}
+.node:hover{scale:1.08}
+.node.on{background:#ff8a3d;box-shadow:0 0 0 4px color-mix(in srgb,var(--or) 35%,transparent)}
+.float{position:absolute;translate:-50% -50%;padding:9px 16px;min-width:84px;animation:pop .38s cubic-bezier(.2,1.2,.4,1) backwards}
+
+.hint{position:fixed;right:6vw;top:50%;translate:0 -50%;width:min(340px,28vw);line-height:1.9;font-size:15px;opacity:.8;pointer-events:none}
+.hint h2{margin:0 0 8px;font-size:20px}
+.hint ol{margin:0;padding-left:1.2em}
+
+/* 点击后的全屏内容：从点击位置圆形展开 */
+.view{position:fixed;inset:0;z-index:30;background:var(--bg);overflow:auto;padding:max(36px,calc(env(safe-area-inset-top,0px) + 16px)) 6vw 48px;clip-path:circle(0px at var(--x,50%) var(--y,50%));pointer-events:none;transition:clip-path .8s cubic-bezier(.65,0,.2,1)}
+.view.open{clip-path:circle(160vmax at var(--x,50%) var(--y,50%));pointer-events:auto}
+.view .x{position:fixed;top:max(20px,calc(env(safe-area-inset-top,0px) + 8px));right:28px;width:44px;height:44px;border-radius:50%;border:2px solid var(--orb);background:var(--or);color:#fff;font-size:20px;cursor:pointer}
+.crumb{color:var(--ring);font-size:15px;margin-bottom:10px}
+.view h1{margin:0 0 6px;font-size:clamp(34px,5vw,60px);line-height:1.1}
+.view .sub{margin:0 0 28px;opacity:.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+.card{aspect-ratio:4/3;border-radius:16px;color:#fff;padding:16px;font-weight:700;font-size:18px;display:flex;align-items:flex-end;animation:up .5s backwards;animation-delay:calc(var(--i)*45ms + 450ms)}
+
+@keyframes pop{from{opacity:0;scale:.4}}
+@keyframes fade{from{opacity:0}}
+@keyframes up{from{opacity:0;translate:0 16px}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media (max-width:760px){.hint{display:none}}
+</style>
+</head>
+<body>
+<aside class="hint">
+  <h2>同心圆分类导航</h2>
+  <ol>
+    <li>左侧竖向导航栏常驻「分类」</li>
+    <li>悬停某个分类，弹出第一层同心圆</li>
+    <li>悬停第一层中的类目，弹出下一层同心圆</li>
+    <li>点击任意类目，全屏展示该层级内容</li>
+  </ol>
+</aside>
+
+<div id="stage">
+  <div class="disc" id="d2"></div>
+  <div class="disc" id="d1"></div>
+  <svg id="lines"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs><g id="g1"></g><g id="g2"></g></svg>
+  <div class="box" id="l2"></div>
+  <div class="box" id="l3"></div>
+</div>
+
+<nav id="bar"><div class="t">分类</div><div id="items"></div></nav>
+<div class="view" id="view"></div>
+
+<script>
+const DATA={
+ 数码:{手机:['旗舰机','折叠屏','游戏手机','入门机'],电脑:['轻薄本','游戏本','台式机','平板'],配件:['耳机','充电器','数据线','保护壳']},
+ 服饰:{女装:['连衣裙','外套','针织衫','裤装'],男装:['衬衫','夹克','T 恤','牛仔裤'],鞋靴:['运动鞋','靴子','凉鞋','皮鞋']},
+ 家居:{客厅:['沙发','茶几','电视柜','地毯'],卧室:['床','床垫','衣柜','床品'],厨房:['锅具','刀具','小家电','收纳']},
+ 美妆:{护肤:['面霜','精华','防晒','面膜'],彩妆:['口红','粉底','眼影','腮红'],香氛:['香水','香薰','身体乳','洗护']},
+ 运动:{健身:['瑜伽垫','哑铃','弹力带','跳绳'],户外:['帐篷','登山包','冲锋衣','头灯'],球类:['篮球','足球','羽毛球','乒乓球']},
+ 食品:{零食:['坚果','糖果','饼干','肉干'],饮品:['咖啡','茶叶','气泡水','果汁'],生鲜:['水果','肉类','海鲜','蔬菜']}
+};
+const $=s=>document.querySelector(s), NS='http://www.w3.org/2000/svg';
+const bar=$('#bar'),items=$('#items'),L2=$('#l2'),L3=$('#l3'),g1=$('#g1'),g2=$('#g2'),d1=$('#d1'),d2=$('#d2'),view=$('#view');
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)), rad=d=>d*Math.PI/180;
+let G={}, S={a:null,b:null}, timer;
+
+// 以左侧导航栏中心点为圆心
+function geom(){
+  const r=bar.getBoundingClientRect(), H=innerHeight;
+  G.cx=r.left+r.width/2; G.cy=r.top+r.height/2; G.bw=r.width/2;
+  let R1=clamp(H*.46,260,440), R2=R1+clamp(H*.34,200,320);
+  R2=Math.min(R2,innerWidth-G.cx-12); R1=Math.min(R1,R2*.62);
+  G.R1=R1; G.R2=R2;
+  [[d1,R1],[d2,R2]].forEach(([d,R])=>Object.assign(d.style,{width:2*R+'px',height:2*R+'px',left:G.cx-R+'px',top:G.cy-R+'px'}));
+}
+
+function node(t,lv,p,x,y,i){
+  const e=document.createElement('div');
+  e.className='node float'; e.textContent=t;
+  Object.assign(e.dataset,{lv,p,n:t});
+  Object.assign(e.style,{left:x+'px',top:y+'px',animationDelay:i*50+'ms'});
+  return e;
+}
+function edge(o,ux,uy){return Math.min((o.w/2)/Math.max(Math.abs(ux),1e-6),(o.h/2)/Math.max(Math.abs(uy),1e-6))+5}
+function arrow(g,a,b){
+  const dx=b.x-a.x,dy=b.y-a.y,L=Math.hypot(dx,dy)||1,ux=dx/L,uy=dy/L,s=edge(a,ux,uy),t=edge(b,ux,uy)+2;
+  const l=document.createElementNS(NS,'line');
+  l.setAttribute('x1',a.x+ux*s);l.setAttribute('y1',a.y+uy*s);
+  l.setAttribute('x2',b.x-ux*t);l.setAttribute('y2',b.y-uy*t);
+  l.setAttribute('marker-end','url(#ah)');
+  g.appendChild(l);
+}
+// 在环带内沿圆弧扇形排布子类目
+function fan(kids,r,th,step,cap,lv,path,box,g,pc){
+  const n=kids.length, mx=Math.min(cap,Math.asin(Math.min(.95,(innerHeight/2-40)/r)));
+  const st=Math.min(step,2*mx/Math.max(1,n-1)), span=(n-1)*st, s=clamp(th-span/2,-mx,mx-span);
+  kids.forEach((k,i)=>{
+    const a=s+i*st,x=G.cx+r*Math.cos(a),y=G.cy+r*Math.sin(a);
+    const el=node(k,lv,path.concat(k).join('|'),x,y,i);
+    el.dataset.ang=a; box.appendChild(el);
+  });
+}
+
+function closeB(){
+  S.b=null; L3.innerHTML=g2.innerHTML=''; d2.classList.remove('open');
+  L2.querySelectorAll('.on').forEach(e=>e.classList.remove('on'));
+}
+function closeAll(){
+  closeB(); S.a=null; L2.innerHTML=g1.innerHTML=''; d1.classList.remove('open');
+  items.querySelectorAll('.on').forEach(e=>e.classList.remove('on'));
+}
+function openA(n){            // 悬停一级分类 → 第一层同心圆
+  const a=n.dataset.n; if(S.a===a) return;
+  closeB(); S.a=a; L2.innerHTML=g1.innerHTML='';
+  items.querySelectorAll('.on').forEach(e=>e.classList.remove('on')); n.classList.add('on');
+  d1.classList.add('open');
+  const r=n.getBoundingClientRect(), pc={x:r.left+r.width/2,y:r.top+r.height/2,w:r.width,h:r.height};
+  const rr=(G.bw+G.R1)/2, th=Math.asin(clamp((pc.y-G.cy)/rr,-.95,.95));
+  fan(Object.keys(DATA[a]),rr,th,rad(17),rad(58),2,[a],L2,g1,pc);
+}
+function openB(n){            // 悬停第一层类目 → 下一层同心圆
+  const b=n.dataset.n; if(S.b===b) return;
+  closeB(); S.b=b; n.classList.add('on'); d2.classList.add('open');
+  const pc={x:parseFloat(n.style.left),y:parseFloat(n.style.top),w:n.offsetWidth,h:n.offsetHeight};
+  fan(DATA[S.a][b],(G.R1+G.R2)/2,+n.dataset.ang,rad(10),rad(70),3,[S.a,b],L3,g2,pc);
+}
+const act=n=>+n.dataset.lv===1?openA(n):+n.dataset.lv===2&&openB(n);
+
+document.addEventListener('mouseover',e=>{
+  clearTimeout(timer);
+  const n=e.target.closest('.node');
+  if(n) act(n);
+  else if(!e.target.closest('#bar,.disc.open')) timer=setTimeout(closeAll,280);
+});
+
+// 点击类目 → 全屏内容，从点击处圆形展开
+function openView(p,x,y){
+  let kids;
+  if(p.length===1) kids=Object.keys(DATA[p[0]]);
+  else if(p.length===2) kids=DATA[p[0]][p[1]];
+  else kids=Array.from({length:8},(_,i)=>p[2]+' 示例商品 '+String(i+1).padStart(2,'0'));
+  const h0=p.join('').length*29;
+  view.style.setProperty('--x',x+'px'); view.style.setProperty('--y',y+'px');
+  view.innerHTML=`<button class="x" aria-label="关闭">✕</button>
+    <div class="crumb">${p.join(' / ')}</div><h1>${p[p.length-1]}</h1>
+    <p class="sub">${p.length<3?`第 ${p.length} 层，共 ${kids.length} 个子类`:'第 3 层，商品列表'}</p>
+    <div class="grid">${kids.map((k,i)=>{const h=(i*43+h0)%360;return `<div class="card" style="--i:${i};background:linear-gradient(135deg,hsl(${h} 60% 52%),hsl(${(h+40)%360} 65% 38%))">${k}</div>`}).join('')}</div>`;
+  view.scrollTop=0;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>view.classList.add('open')));
+  setTimeout(closeAll,850);
+}
+document.addEventListener('click',e=>{
+  if(e.target.closest('.x')){view.classList.remove('open');return}
+  const n=e.target.closest('.node'); if(!n) return;
+  // 触屏没有 hover：第一次点击先展开，再次点击进入
+  if(matchMedia('(hover:none)').matches&&+n.dataset.lv<3&&!n.classList.contains('on')){act(n);return}
+  const r=n.getBoundingClientRect();
+  openView(n.dataset.p.split('|'),r.left+r.width/2,r.top+r.height/2);
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')view.classList.remove('open')});
+
+Object.keys(DATA).forEach(c=>{
+  const e=document.createElement('div');
+  e.className='node'; e.textContent=c; Object.assign(e.dataset,{lv:1,n:c,p:c});
+  items.appendChild(e);
+});
+geom();
+addEventListener('resize',()=>{geom();closeAll()});
+</script>
+</body>
+</html>
