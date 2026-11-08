@@ -3,70 +3,120 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>同心圆分类导航</title>
+<title>VibeNavi — 中国 AI 工具导航（20 个工具官网直达）</title>
+<meta name="description" content="中国 AI 工具导航：对话模型、视频生成、图像生成、编程与 Agent。收录 DeepSeek、Kimi、通义千问、可灵、海螺、即梦、通义灵码等 20 个工具，含官网直达与定价说明。">
+<link rel="canonical" href="https://boyue.ai/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="VibeNavi — 中国 AI 工具导航">
+<meta property="og:description" content="对话模型、视频生成、图像生成、编程与 Agent，20 个中国 AI 工具官网直达。">
+<meta property="og:url" content="https://boyue.ai/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow">
 <style>
-:root{--bg:#fff;--ink:#0f2a38;--bar:#175f82;--ring:#1a5f7a;--d1:rgba(26,95,122,.08);--d2:rgba(26,95,122,.045);--or:#e8722f;--orb:#12303f;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a22;--ink:#e6eef3;--bar:#1b6b91;--ring:#5aa7c9;--d1:rgba(90,167,201,.13);--d2:rgba(90,167,201,.07);--or:#f0803f;--orb:#06121a;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0e1a22;--ink:#e6eef3;--bar:#1b6b91;--ring:#5aa7c9;--d1:rgba(90,167,201,.13);--d2:rgba(90,167,201,.07);--or:#f0803f;--orb:#06121a;color-scheme:dark}
+:root{--bg:#fff;--ink:#0f2a38;--bar:#175f82;--ring:#1a5f7a;--d1:rgba(26,95,122,.08);--d2:rgba(26,95,122,.045);--or:#e8722f;--orb:#12303f;--muted:rgba(15,42,56,.62);--card:#f6f9fb;color-scheme:light;box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a22;--ink:#e6eef3;--bar:#1b6b91;--ring:#5aa7c9;--d1:rgba(90,167,201,.13);--d2:rgba(90,167,201,.07);--or:#f0803f;--orb:#06121a;--muted:rgba(230,238,243,.62);--card:#13232d;color-scheme:dark}}
 *{box-sizing:border-box}
-html,body{height:100%;margin:0}
-body{background:var(--bg);color:var(--ink);overflow:hidden;font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
 
-/* 左侧常驻竖向导航 */
-#bar{position:fixed;left:28px;top:max(4vh,calc(env(safe-area-inset-top,0px) + 8px));bottom:4vh;width:96px;z-index:6;border-radius:18px;background:var(--bar);border:2px solid var(--orb);box-shadow:0 8px 30px rgba(0,0,0,.18)}
-#bar .t{position:absolute;top:18px;left:0;right:0;text-align:center;color:#fff;font-size:22px;font-weight:700;letter-spacing:.1em}
-#items{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px}
-#bar .node{width:72px;padding:9px 0}
+/* 左侧常驻分类栏 */
+#bar{position:fixed;left:24px;top:max(4vh,calc(env(safe-area-inset-top) + 8px));bottom:4vh;width:124px;z-index:6;border-radius:18px;background:var(--bar);border:2px solid var(--orb);box-shadow:0 8px 30px rgba(0,0,0,.18);display:flex;flex-direction:column}
+#bar .t{position:absolute;top:18px;left:0;right:0;text-align:center;color:#fff;font-size:20px;font-weight:700;letter-spacing:.08em}
+#items{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;padding:48px 8px 8px}
+#bar .node{width:104px;padding:8px 6px;white-space:normal;line-height:1.28}
 
-/* 同心圆舞台 */
-#stage{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
-.disc{position:absolute;border-radius:50%;border:1.5px solid var(--ring);opacity:0;scale:.15;pointer-events:none;transition:scale .55s cubic-bezier(.2,.9,.25,1),opacity .35s}
+/* 同心圆快捷导航（悬停分类时出现，不挡正文） */
+#stage{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
+.disc{position:absolute;border-radius:50%;border:1.5px solid var(--ring);opacity:0;scale:.15;pointer-events:none;transition:scale .5s cubic-bezier(.2,.9,.25,1),opacity .3s}
 .disc.open{opacity:1;scale:1;pointer-events:auto}
 #d1{background:var(--d1);z-index:2}
 #d2{background:var(--d2);z-index:1}
 #lines{position:absolute;inset:0;width:100%;height:100%;z-index:3;color:var(--ring);pointer-events:none}
-#lines line{stroke:currentColor;stroke-width:1.6;opacity:.6;animation:fade .45s .1s backwards}
+#lines line{stroke:currentColor;stroke-width:1.6;opacity:.55}
 .box{position:absolute;inset:0;z-index:4;pointer-events:none}
 
-/* 类目节点 */
+/* 通用节点 */
 .node{background:var(--or);color:#fff;border:2px solid var(--orb);border-radius:9px;font-size:14px;font-weight:600;text-align:center;white-space:nowrap;cursor:pointer;user-select:none;pointer-events:auto;transition:background .2s,box-shadow .2s,scale .2s}
 .node:hover{scale:1.08}
+.node:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
 .node.on{background:#ff8a3d;box-shadow:0 0 0 4px color-mix(in srgb,var(--or) 35%,transparent)}
-.float{position:absolute;translate:-50% -50%;padding:9px 16px;min-width:84px;animation:pop .38s cubic-bezier(.2,1.2,.4,1) backwards}
+.float{position:absolute;translate:-50% -50%;padding:9px 16px;min-width:84px;animation:pop .35s cubic-bezier(.2,1.2,.4,1) backwards}
 
-.hint{position:fixed;right:6vw;top:50%;translate:0 -50%;width:min(340px,28vw);line-height:1.9;font-size:15px;opacity:.8;pointer-events:none}
-.hint h2{margin:0 0 8px;font-size:20px}
-.hint ol{margin:0;padding-left:1.2em}
+/* 顶部：品牌 + 搜索 */
+.top{position:relative;z-index:7;display:flex;flex-direction:column;align-items:stretch;gap:10px;width:min(360px,100%);margin:0 0 18px}
+.brand{font-weight:800;font-size:15px;letter-spacing:.12em;color:var(--ring);text-transform:uppercase;text-align:right}
+.brand small{display:block;font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted);font-size:12px;margin-top:2px}
+#q{width:100%;padding:11px 14px;border-radius:11px;border:1.5px solid var(--ring);background:var(--bg);color:var(--ink);font-size:14px;outline:none}
+#q:focus{box-shadow:0 0 0 3px color-mix(in srgb,var(--ring) 22%,transparent)}
+#hits{position:absolute;top:100%;right:0;width:100%;max-height:52vh;overflow:auto;display:none;background:var(--card);border:1px solid var(--ring);border-radius:11px;padding:6px;box-shadow:0 14px 40px rgba(0,0,0,.18)}
+#hits.on{display:block}
+#hits a{display:block;padding:9px 10px;border-radius:8px;text-decoration:none}
+#hits a:hover{background:color-mix(in srgb,var(--ring) 12%,transparent)}
+#hits b{display:block;font-size:14px}
+#hits span{font-size:12px;color:var(--muted)}
 
-/* 点击后的全屏内容：从点击位置圆形展开 */
-.view{position:fixed;inset:0;z-index:30;background:var(--bg);overflow:auto;padding:max(36px,calc(env(safe-area-inset-top,0px) + 16px)) 6vw 48px;clip-path:circle(0px at var(--x,50%) var(--y,50%));pointer-events:none;transition:clip-path .8s cubic-bezier(.65,0,.2,1)}
+/* 正文目录 */
+main{margin:0 0 0 190px;padding:max(28px,calc(env(safe-area-inset-top) + 18px)) 5vw 80px 0;max-width:1500px}
+.top{margin-left:auto}
+.hero{padding:8px 0 22px;border-bottom:1px solid color-mix(in srgb,var(--ring) 24%,transparent);margin-bottom:26px}
+.hero h1{margin:0 0 10px;font-size:clamp(28px,3.6vw,44px);line-height:1.16;letter-spacing:-.01em}
+.hero p{margin:0;color:var(--muted);font-size:15px;line-height:1.75;max-width:62ch}
+.hero nav{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.hero nav a{font-size:13px;text-decoration:none;padding:5px 11px;border-radius:999px;border:1px solid color-mix(in srgb,var(--ring) 40%,transparent);color:var(--ring)}
+.hero nav a:hover{background:color-mix(in srgb,var(--ring) 10%,transparent)}
+section.cat{margin:0 0 40px;scroll-margin-top:24px}
+section.cat>h2{font-size:20px;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+section.cat>h2::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--or);display:inline-block}
+section.cat>p{margin:0 0 18px;color:var(--muted);font-size:13.5px}
+.sub{margin:0 0 22px}
+.sub>h3{margin:0 0 10px;font-size:14px;font-weight:600;color:var(--ring);letter-spacing:.04em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid color-mix(in srgb,var(--ring) 26%,transparent);border-radius:14px;padding:15px;display:flex;flex-direction:column;gap:8px;transition:border-color .2s,translate .2s}
+.card:hover{border-color:var(--ring);translate:0 -2px}
+.card h4{margin:0;font-size:16.5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tag{font-size:11px;font-weight:600;color:var(--ring);border:1px solid currentColor;border-radius:6px;padding:1px 6px}
+.card p{margin:0;font-size:13.5px;line-height:1.65;color:var(--muted);flex:1}
+.card .price{font-size:12.5px;opacity:.85}
+.card .go{align-self:flex-start;margin-top:2px;padding:7px 14px;border-radius:8px;background:var(--or);color:#fff;text-decoration:none;font-weight:600;font-size:13px}
+.card .go:hover{background:#ff8a3d}
+footer{border-top:1px solid color-mix(in srgb,var(--ring) 24%,transparent);padding-top:18px;color:var(--muted);font-size:13px;line-height:1.8}
+
+/* 点击类目后的全屏视图 */
+.view{position:fixed;inset:0;z-index:30;background:var(--bg);overflow:auto;padding:max(36px,calc(env(safe-area-inset-top) + 16px)) 6vw 48px;clip-path:circle(0px at var(--x,50%) var(--y,50%));pointer-events:none;transition:clip-path .7s cubic-bezier(.65,0,.2,1)}
 .view.open{clip-path:circle(160vmax at var(--x,50%) var(--y,50%));pointer-events:auto}
-.view .x{position:fixed;top:max(20px,calc(env(safe-area-inset-top,0px) + 8px));right:28px;width:44px;height:44px;border-radius:50%;border:2px solid var(--orb);background:var(--or);color:#fff;font-size:20px;cursor:pointer}
+.view .x{position:fixed;top:max(20px,calc(env(safe-area-inset-top) + 8px));right:28px;width:44px;height:44px;border-radius:50%;border:2px solid var(--orb);background:var(--or);color:#fff;font-size:20px;cursor:pointer;z-index:2}
 .crumb{color:var(--ring);font-size:15px;margin-bottom:10px}
-.view h1{margin:0 0 6px;font-size:clamp(34px,5vw,60px);line-height:1.1}
-.view .sub{margin:0 0 28px;opacity:.65}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
-.card{aspect-ratio:4/3;border-radius:16px;color:#fff;padding:16px;font-weight:700;font-size:18px;display:flex;align-items:flex-end;animation:up .5s backwards;animation-delay:calc(var(--i)*45ms + 450ms)}
+.view h1{margin:0 0 6px;font-size:clamp(30px,4.4vw,52px);line-height:1.1}
+.view .sub{margin:0 0 26px;color:var(--muted)}
 
 @keyframes pop{from{opacity:0;scale:.4}}
-@keyframes fade{from{opacity:0}}
-@keyframes up{from{opacity:0;translate:0 16px}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-@media (max-width:760px){.hint{display:none}}
+@media (max-width:900px){
+  #bar{width:96px;left:8px}
+  #bar .node{width:78px;font-size:12px;padding:7px 4px}
+  main{margin-left:118px;padding-right:16px}
+  .hero{padding-top:4px}
+}
+@media (max-width:560px){
+  #bar{position:static;width:auto;margin:12px;bottom:auto;top:auto}
+  #bar .t{position:static;padding:14px 0 0}
+  #items{flex-direction:row;flex-wrap:wrap;padding:10px;gap:8px;justify-content:flex-start}
+  main{margin:0;padding:16px 16px 60px}
+  .top{width:auto;margin:0 0 14px}
+  .brand{text-align:left}
+  .grid{grid-template-columns:1fr}
+}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"VibeNavi 中国 AI 工具导航","url":"https://boyue.ai/","inLanguage":"zh-CN","description":"收录对话模型、视频生成、图像生成、编程与 Agent 共 20 个中国 AI 工具，官网直达。"}
+</script>
 </head>
 <body>
-<aside class="hint">
-  <h2>同心圆分类导航</h2>
-  <ol>
-    <li>左侧竖向导航栏常驻「分类」</li>
-    <li>悬停某个分类，弹出第一层同心圆</li>
-    <li>悬停第一层中的类目，弹出下一层同心圆</li>
-    <li>点击任意类目，全屏展示该层级内容</li>
-  </ol>
-</aside>
 
-<div id="stage">
+<nav id="bar" aria-label="分类导航"><div class="t">分类</div><div id="items"></div></nav>
+
+<div id="stage" aria-hidden="true">
   <div class="disc" id="d2"></div>
   <div class="disc" id="d1"></div>
   <svg id="lines"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs><g id="g1"></g><g id="g2"></g></svg>
@@ -74,121 +124,250 @@ body{background:var(--bg);color:var(--ink);overflow:hidden;font-family:"PingFang
   <div class="box" id="l3"></div>
 </div>
 
-<nav id="bar"><div class="t">分类</div><div id="items"></div></nav>
-<div class="view" id="view"></div>
+<main>
+  <div class="top">
+    <div class="brand">VibeNavi<small>中国 AI 工具导航 · 官网直达</small></div>
+    <input id="q" type="search" placeholder="搜索工具，如 DeepSeek / 视频 / 开源" aria-label="搜索工具" autocomplete="off">
+    <div id="hits" role="listbox" aria-label="搜索结果"></div>
+  </div>
+
+  <div class="hero">
+    <h1>中国 AI 工具导航</h1>
+    <p>收录 20 个可以真正用起来的中国 AI 工具，按用途分类，每张卡片直达官网。定价与形态按公开信息整理，实际以官网为准。</p>
+    <nav aria-label="跳转到分类">
+      <a href="#cat-chat">对话与推理</a><a href="#cat-video">视频生成</a><a href="#cat-image">图像生成</a><a href="#cat-code">编程与 Agent</a>
+    </nav>
+  </div>
+
+  <section class="cat" id="cat-chat" data-cat="对话与推理">
+    <h2>对话与推理</h2>
+    <p>通用助手、长文档与开源模型：日常问答、写作、资料处理的主力。</p>
+
+    <div class="sub" data-sub="通用助手">
+      <h3>通用助手</h3>
+      <div class="grid">
+        <article class="card"><h4>DeepSeek<span class="tag">LLM / 推理</span></h4><p>开源推理模型，V3 对齐 GPT-4 级基准，R1 长于数学与代码。</p><div class="price">网页免费 · API $0.07–0.25/百万 tokens</div><a class="go" href="https://www.deepseek.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+        <article class="card"><h4>豆包<span class="tag">LLM / 语音</span></h4><p>字节跳动旗下助手，语音合成与实时翻译成熟，与抖音生态打通。</p><div class="price">免费 + 订阅档</div><a class="go" href="https://www.doubao.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+        <article class="card"><h4>腾讯元宝<span class="tag">LLM / 办公</span></h4><p>接入混元与 DeepSeek，长文档、公众号内容检索与办公场景顺手。</p><div class="price">免费 + 订阅档</div><a class="go" href="https://yuanbao.tencent.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+        <article class="card"><h4>智谱清言<span class="tag">LLM / Agent</span></h4><p>智谱 AI 助手，AutoGLM 可自主操作浏览器与应用，ChatGLM 系列开源。</p><div class="price">免费 + API 按量</div><a class="go" href="https://chatglm.cn" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+        <article class="card"><h4>文心一言<span class="tag">LLM / 多模态</span></h4><p>百度文心大模型对话产品，中文知识问答与图文理解见长。</p><div class="price">免费 + 会员</div><a class="go" href="https://yiyan.baidu.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+      </div>
+    </div>
+
+    <div class="sub" data-sub="长上下文">
+      <h3>长上下文</h3>
+      <div class="grid">
+        <article class="card"><h4>Kimi<span class="tag">LLM / 长文</span></h4><p>月之暗面助手，超长上下文窗口，擅文档解析与长篇写作。</p><div class="price">免费 + Pro 订阅</div><a class="go" href="https://kimi.moonshot.cn" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+        <article class="card"><h4>讯飞星火<span class="tag">LLM / 语音</span></h4><p>科大讯飞大模型，中文语音识别与实时翻译为强项，支持多模态输入。</p><div class="price">免费 + Pro 订阅</div><a class="go" href="https://xinghuo.xfyun.cn" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+      </div>
+    </div>
+
+    <div class="sub" data-sub="开源模型">
+      <h3>开源模型</h3>
+      <div class="grid">
+        <article class="card"><h4>通义千问 Qwen<span class="tag">LLM / 开源</span></h4><p>阿里开源多语言模型，代码与推理表现强，含视觉语言变体。</p><div class="price">开源 + API 按量</div><a class="go" href="https://chat.qwen.ai" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+        <article class="card"><h4>百川<span class="tag">LLM / 企业</span></h4><p>面向企业的模型，提供医疗、法律等领域微调版本。</p><div class="price">企业授权</div><a class="go" href="https://www.baichuan-ai.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+        <article class="card"><h4>腾讯混元<span class="tag">LLM / 开源</span></h4><p>腾讯自研大模型，提供开源权重与多模态能力。</p><div class="price">免费体验 + API</div><a class="go" href="https://hunyuan.tencent.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cat" id="cat-video" data-cat="视频生成">
+    <h2>视频生成</h2>
+    <p>文生视频与图生视频：短素材、分镜、广告片先出草稿。</p>
+
+    <div class="sub" data-sub="文生视频">
+      <h3>文生视频</h3>
+      <div class="grid">
+        <article class="card"><h4>可灵 Kling<span class="tag">视频生成</span></h4><p>快手文生视频模型，1080p、长镜头与物理模拟表现突出。</p><div class="price">免费额度 + Pro 订阅</div><a class="go" href="https://klingai.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+        <article class="card"><h4>海螺 Hailuo<span class="tag">视频 + 音乐</span></h4><p>MiniMax 旗下，文生视频与 AI 音乐，跨镜头角色一致性较好。</p><div class="price">按积分计费</div><a class="go" href="https://hailuoai.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+        <article class="card"><h4>即梦 Jimeng<span class="tag">视频 + 图像</span></h4><p>字节跳动创作平台，视频与图像生成一体，适合短视频素材。</p><div class="price">免费额度 + 订阅</div><a class="go" href="https://jimeng.jianying.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+      </div>
+    </div>
+
+    <div class="sub" data-sub="图生视频">
+      <h3>图生视频</h3>
+      <div class="grid">
+        <article class="card"><h4>Vidu<span class="tag">视频生成</span></h4><p>生数科技视频模型，图生视频与参考一致性能力。</p><div class="price">免费额度 + 订阅</div><a class="go" href="https://www.vidu.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cat" id="cat-image" data-cat="图像生成">
+    <h2>图像生成</h2>
+    <p>海报、封面、商品图与风格化创作。</p>
+
+    <div class="sub" data-sub="图像创作">
+      <h3>图像创作</h3>
+      <div class="grid">
+        <article class="card"><h4>HiDream<span class="tag">图像生成</span></h4><p>高分辨率图像生成，中英文提示词文字还原准确，支持风格迁移与局部重绘。</p><div class="price">按积分计费</div><a class="go" href="https://hidreamai.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+        <article class="card"><h4>通义万相<span class="tag">图像 / 视频</span></h4><p>阿里图像与视频生成平台，中文语义理解与电商场景素材见长。</p><div class="price">免费额度 + 按量</div><a class="go" href="https://tongyi.aliyun.com/wanxiang/" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cat" id="cat-code" data-cat="编程与 Agent">
+    <h2>编程与 Agent</h2>
+    <p>编码助手与模型 API：补全、单测、仓库问答与多模态接入。</p>
+
+    <div class="sub" data-sub="编程助手">
+      <h3>编程助手</h3>
+      <div class="grid">
+        <article class="card"><h4>通义灵码<span class="tag">编码助手</span></h4><p>阿里云 AI 编码助手，代码补全、单元测试生成与仓库问答。</p><div class="price">个人免费 + 企业版</div><a class="go" href="https://lingma.aliyun.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+        <article class="card"><h4>文心快码 Comate<span class="tag">编码助手</span></h4><p>百度 AI 编码助手，支持多语言补全与研发问答。</p><div class="price">免费 + 企业版</div><a class="go" href="https://comate.baidu.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+        <article class="card"><h4>CodeGeeX<span class="tag">编码助手</span></h4><p>智谱开源代码模型，支持多语言补全、翻译与 IDE 插件。</p><div class="price">免费 + 企业版</div><a class="go" href="https://codegeex.cn" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+      </div>
+    </div>
+
+    <div class="sub" data-sub="模型 API">
+      <h3>模型 API</h3>
+      <div class="grid">
+        <article class="card"><h4>阶跃星辰 StepFun<span class="tag">多模态 API</span></h4><p>多模态大模型开放平台，提供文本、视觉与语音能力 API。</p><div class="price">按量计费</div><a class="go" href="https://platform.stepfun.com" target="_blank" rel="noopener noreferrer">访问官网 ↗</a></article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>VibeNavi · 中国 AI 工具导航。收录信息按公开资料整理，定价与可用性以各官网为准；本站不代理、不代收任何费用。</p>
+    <p>开源：<a href="https://github.com/muyanaicode/vibenavi" target="_blank" rel="noopener noreferrer">github.com/muyanaicode/vibenavi</a></p>
+  </footer>
+</main>
+
+<div class="view" id="view" role="dialog" aria-modal="true" aria-label="类目工具列表"></div>
 
 <script>
-const DATA={
- 数码:{手机:['旗舰机','折叠屏','游戏手机','入门机'],电脑:['轻薄本','游戏本','台式机','平板'],配件:['耳机','充电器','数据线','保护壳']},
- 服饰:{女装:['连衣裙','外套','针织衫','裤装'],男装:['衬衫','夹克','T 恤','牛仔裤'],鞋靴:['运动鞋','靴子','凉鞋','皮鞋']},
- 家居:{客厅:['沙发','茶几','电视柜','地毯'],卧室:['床','床垫','衣柜','床品'],厨房:['锅具','刀具','小家电','收纳']},
- 美妆:{护肤:['面霜','精华','防晒','面膜'],彩妆:['口红','粉底','眼影','腮红'],香氛:['香水','香薰','身体乳','洗护']},
- 运动:{健身:['瑜伽垫','哑铃','弹力带','跳绳'],户外:['帐篷','登山包','冲锋衣','头灯'],球类:['篮球','足球','羽毛球','乒乓球']},
- 食品:{零食:['坚果','糖果','饼干','肉干'],饮品:['咖啡','茶叶','气泡水','果汁'],生鲜:['水果','肉类','海鲜','蔬菜']}
-};
 const $=s=>document.querySelector(s), NS='http://www.w3.org/2000/svg';
 const bar=$('#bar'),items=$('#items'),L2=$('#l2'),L3=$('#l3'),g1=$('#g1'),g2=$('#g2'),d1=$('#d1'),d2=$('#d2'),view=$('#view');
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)), rad=d=>d*Math.PI/180;
 let G={}, S={a:null,b:null}, timer;
 
-// 以左侧导航栏中心点为圆心
+// 以正文为唯一数据源，JS 只做增强（搜索 / 同心圆 / 全屏视图）
+const CATS=[...document.querySelectorAll('section.cat')].map(sec=>({
+  name: sec.dataset.cat,
+  subs: [...sec.querySelectorAll('.sub')].map(sub=>({
+    name: sub.dataset.sub,
+    tools: [...sub.querySelectorAll('article.card')].map(c=>({
+      name: c.querySelector('h4').childNodes[0].textContent.trim(),
+      type: c.querySelector('.tag')?.textContent.trim() || '',
+      desc: c.querySelector('p').textContent.trim(),
+      meta: c.querySelector('.price').textContent.trim(),
+      url: c.querySelector('a.go').href,
+      card: c
+    }))
+  }))
+}));
+const DATA=Object.fromEntries(CATS.map(c=>[c.name, Object.fromEntries(c.subs.map(s=>[s.name,s.tools]))]));
+const CAT_META=Object.fromEntries(CATS.map(c=>[c.name,{subs:c.subs.length, tools:c.subs.reduce((n,s)=>n+s.tools.length,0)}]));
+
 function geom(){
   const r=bar.getBoundingClientRect(), H=innerHeight;
   G.cx=r.left+r.width/2; G.cy=r.top+r.height/2; G.bw=r.width/2;
-  let R1=clamp(H*.46,260,440), R2=R1+clamp(H*.34,200,320);
+  let R1=clamp(H*.42,240,420), R2=R1+clamp(H*.3,180,300);
   R2=Math.min(R2,innerWidth-G.cx-12); R1=Math.min(R1,R2*.62);
   G.R1=R1; G.R2=R2;
   [[d1,R1],[d2,R2]].forEach(([d,R])=>Object.assign(d.style,{width:2*R+'px',height:2*R+'px',left:G.cx-R+'px',top:G.cy-R+'px'}));
 }
-
 function node(t,lv,p,x,y,i){
   const e=document.createElement('div');
-  e.className='node float'; e.textContent=t;
+  e.className='node float'; e.textContent=t; e.tabIndex=0; e.setAttribute('role','button');
   Object.assign(e.dataset,{lv,p,n:t});
-  Object.assign(e.style,{left:x+'px',top:y+'px',animationDelay:i*50+'ms'});
+  Object.assign(e.style,{left:x+'px',top:y+'px',animationDelay:i*45+'ms'});
   return e;
 }
-function edge(o,ux,uy){return Math.min((o.w/2)/Math.max(Math.abs(ux),1e-6),(o.h/2)/Math.max(Math.abs(uy),1e-6))+5}
-function arrow(g,a,b){
-  const dx=b.x-a.x,dy=b.y-a.y,L=Math.hypot(dx,dy)||1,ux=dx/L,uy=dy/L,s=edge(a,ux,uy),t=edge(b,ux,uy)+2;
-  const l=document.createElementNS(NS,'line');
-  l.setAttribute('x1',a.x+ux*s);l.setAttribute('y1',a.y+uy*s);
-  l.setAttribute('x2',b.x-ux*t);l.setAttribute('y2',b.y-uy*t);
-  l.setAttribute('marker-end','url(#ah)');
-  g.appendChild(l);
-}
-// 在环带内沿圆弧扇形排布子类目
-function fan(kids,r,th,step,cap,lv,path,box,g,pc){
+function fan(kids,r,th,step,cap,lv,path,box){
   const n=kids.length, mx=Math.min(cap,Math.asin(Math.min(.95,(innerHeight/2-40)/r)));
   const st=Math.min(step,2*mx/Math.max(1,n-1)), span=(n-1)*st, s=clamp(th-span/2,-mx,mx-span);
   kids.forEach((k,i)=>{
-    const a=s+i*st,x=G.cx+r*Math.cos(a),y=G.cy+r*Math.sin(a);
-    const el=node(k,lv,path.concat(k).join('|'),x,y,i);
+    const a=s+i*st;
+    const el=node(k,lv,path.concat(k).join('|'),G.cx+r*Math.cos(a),G.cy+r*Math.sin(a),i);
     el.dataset.ang=a; box.appendChild(el);
   });
 }
-
-function closeB(){
-  S.b=null; L3.innerHTML=g2.innerHTML=''; d2.classList.remove('open');
-  L2.querySelectorAll('.on').forEach(e=>e.classList.remove('on'));
-}
+function closeB(){ S.b=null; L3.innerHTML=g2.innerHTML=''; d2.classList.remove('open'); L2.querySelectorAll('.on').forEach(e=>e.classList.remove('on')); }
 function closeAll(){
   closeB(); S.a=null; L2.innerHTML=g1.innerHTML=''; d1.classList.remove('open');
   items.querySelectorAll('.on').forEach(e=>e.classList.remove('on'));
 }
-function openA(n){            // 悬停一级分类 → 第一层同心圆
+function openA(n){
   const a=n.dataset.n; if(S.a===a) return;
   closeB(); S.a=a; L2.innerHTML=g1.innerHTML='';
   items.querySelectorAll('.on').forEach(e=>e.classList.remove('on')); n.classList.add('on');
   d1.classList.add('open');
   const r=n.getBoundingClientRect(), pc={x:r.left+r.width/2,y:r.top+r.height/2,w:r.width,h:r.height};
   const rr=(G.bw+G.R1)/2, th=Math.asin(clamp((pc.y-G.cy)/rr,-.95,.95));
-  fan(Object.keys(DATA[a]),rr,th,rad(17),rad(58),2,[a],L2,g1,pc);
+  fan(Object.keys(DATA[a]),rr,th,rad(17),rad(58),2,[a],L2);
 }
-function openB(n){            // 悬停第一层类目 → 下一层同心圆
+function showB(n){
   const b=n.dataset.n; if(S.b===b) return;
   closeB(); S.b=b; n.classList.add('on'); d2.classList.add('open');
-  const pc={x:parseFloat(n.style.left),y:parseFloat(n.style.top),w:n.offsetWidth,h:n.offsetHeight};
-  fan(DATA[S.a][b],(G.R1+G.R2)/2,+n.dataset.ang,rad(10),rad(70),3,[S.a,b],L3,g2,pc);
+  const pc={x:parseFloat(n.style.left),y:parseFloat(n.style.top)};
+  const rr=(G.R1+G.R2)/2, th=Math.asin(clamp((pc.y-G.cy)/rr,-.95,.95));
+  fan(DATA[S.a][b].slice(0,4).map(t=>t.name), rr, th, rad(12), rad(70), 4, [S.a,S.b], L3);
 }
-const act=n=>+n.dataset.lv===1?openA(n):+n.dataset.lv===2&&openB(n);
+const act=n=>+n.dataset.lv===1?openA(n):(+n.dataset.lv===2?showB(n):null);
 
 document.addEventListener('mouseover',e=>{
   clearTimeout(timer);
   const n=e.target.closest('.node');
-  if(n) act(n);
-  else if(!e.target.closest('#bar,.disc.open')) timer=setTimeout(closeAll,280);
+  if(n && +n.dataset.lv<3) act(n);
+  else if(!e.target.closest('#bar,.disc.open,.top,.view')) timer=setTimeout(closeAll,300);
 });
+document.addEventListener('focusin',e=>{const n=e.target.closest('.node'); if(n&&+n.dataset.lv<3) act(n);});
 
-// 点击类目 → 全屏内容，从点击处圆形展开
+function toolsFor(p){
+  if(p.length===1) return Object.values(DATA[p[0]]).flat();
+  if(p.length===2) return DATA[p[0]][p[1]];
+  return DATA[p[0]][p[1]];
+}
+function cardHTML(t,i){
+  const host=t.url.replace(/^https?:\/\//,'').replace(/\/$/,'');
+  return `<article class="card" style="--i:${i}">
+    <h4>${t.name}<span class="tag">${t.type}</span></h4>
+    <p>${t.desc}</p>
+    <div class="price">${t.meta} · ${host}</div>
+    <a class="go" href="${t.url}" target="_blank" rel="noopener noreferrer">访问官网 ↗</a>
+  </article>`;
+}
 function openView(p,x,y){
-  let kids;
-  if(p.length===1) kids=Object.keys(DATA[p[0]]);
-  else if(p.length===2) kids=DATA[p[0]][p[1]];
-  else kids=Array.from({length:8},(_,i)=>p[2]+' 示例商品 '+String(i+1).padStart(2,'0'));
-  const h0=p.join('').length*29;
+  const list=toolsFor(p);
   view.style.setProperty('--x',x+'px'); view.style.setProperty('--y',y+'px');
   view.innerHTML=`<button class="x" aria-label="关闭">✕</button>
     <div class="crumb">${p.join(' / ')}</div><h1>${p[p.length-1]}</h1>
-    <p class="sub">${p.length<3?`第 ${p.length} 层，共 ${kids.length} 个子类`:'第 3 层，商品列表'}</p>
-    <div class="grid">${kids.map((k,i)=>{const h=(i*43+h0)%360;return `<div class="card" style="--i:${i};background:linear-gradient(135deg,hsl(${h} 60% 52%),hsl(${(h+40)%360} 65% 38%))">${k}</div>`}).join('')}</div>`;
+    <p class="sub">共 ${list.length} 个工具，卡片直达官网</p>
+    <div class="grid">${list.map(cardHTML).join('')}</div>`;
   view.scrollTop=0;
   requestAnimationFrame(()=>requestAnimationFrame(()=>view.classList.add('open')));
-  setTimeout(closeAll,850);
+  setTimeout(closeAll,800);
 }
 document.addEventListener('click',e=>{
   if(e.target.closest('.x')){view.classList.remove('open');return}
-  const n=e.target.closest('.node'); if(!n) return;
-  // 触屏没有 hover：第一次点击先展开，再次点击进入
+  const n=e.target.closest('#bar .node, #l2 .node, #l3 .node'); if(!n) return;
   if(matchMedia('(hover:none)').matches&&+n.dataset.lv<3&&!n.classList.contains('on')){act(n);return}
   const r=n.getBoundingClientRect();
   openView(n.dataset.p.split('|'),r.left+r.width/2,r.top+r.height/2);
 });
-document.addEventListener('keydown',e=>{if(e.key==='Escape')view.classList.remove('open')});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){view.classList.remove('open');$('#hits').classList.remove('on');closeAll()}
+  const n=e.target.closest('.node');
+  if(n && (e.key==='Enter'||e.key===' ')){e.preventDefault();const r=n.getBoundingClientRect();openView(n.dataset.p.split('|'),r.left+r.width/2,r.top+r.height/2)}
+});
 
-Object.keys(DATA).forEach(c=>{
+// 搜索
+const ALL=CATS.flatMap(c=>c.subs.flatMap(s=>s.tools.map(t=>({...t,cat:c.name,sub:s.name}))));
+const q=$('#q'),hits=$('#hits');
+q.addEventListener('input',()=>{
+  const v=q.value.trim().toLowerCase();
+  if(!v){hits.classList.remove('on');hits.innerHTML='';return}
+  const r=ALL.filter(t=>(t.name+t.type+t.desc+t.cat+t.sub).toLowerCase().includes(v)).slice(0,8);
+  hits.innerHTML=r.length?r.map(t=>`<a href="${t.url}" target="_blank" rel="noopener noreferrer"><b>${t.name} · ${t.type}</b><span>${t.cat} / ${t.sub}</span></a>`).join(''):'<div style="padding:10px;color:var(--muted);font-size:13px">没有匹配的工具</div>';
+  hits.classList.add('on');
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.top'))hits.classList.remove('on')});
+
+CATS.forEach(c=>{
   const e=document.createElement('div');
-  e.className='node'; e.textContent=c; Object.assign(e.dataset,{lv:1,n:c,p:c});
+  e.className='node'; e.tabIndex=0; e.setAttribute('role','button');
+  e.textContent=c.name; Object.assign(e.dataset,{lv:1,n:c.name,p:c.name});
   items.appendChild(e);
 });
 geom();
