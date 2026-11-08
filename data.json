@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "categories": [
     {
       "name": "AI",
@@ -8,71 +8,296 @@
         {
           "name": "对话助手",
           "sites": [
-            { "n": "DeepSeek", "u": "https://www.deepseek.com", "d": "开源推理模型，数学与代码见长", "t": "LLM" },
-            { "n": "豆包", "u": "https://www.doubao.com", "d": "字节跳动助手，语音与多模态", "t": "LLM" },
-            { "n": "Kimi", "u": "https://kimi.moonshot.cn", "d": "月之暗面，超长上下文", "t": "LLM" },
-            { "n": "通义千问", "u": "https://chat.qwen.ai", "d": "阿里开源多语言模型", "t": "LLM" },
-            { "n": "文心一言", "u": "https://yiyan.baidu.com", "d": "百度文心大模型对话", "t": "LLM" },
-            { "n": "腾讯元宝", "u": "https://yuanbao.tencent.com", "d": "混元 + DeepSeek 双模型", "t": "LLM" },
-            { "n": "智谱清言", "u": "https://chatglm.cn", "d": "AutoGLM 可自主操作应用", "t": "LLM" },
-            { "n": "讯飞星火", "u": "https://xinghuo.xfyun.cn", "d": "语音识别与实时翻译强", "t": "LLM" },
-            { "n": "秘塔 AI 搜索", "u": "https://metaso.cn", "d": "无广告的 AI 搜索", "t": "搜索" },
-            { "n": "天工 AI", "u": "https://www.tiangong.cn", "d": "昆仑万维搜索与写作", "t": "搜索" },
-            { "n": "ChatGPT", "u": "https://chatgpt.com", "d": "OpenAI 通用助手", "t": "LLM" },
-            { "n": "Claude", "u": "https://claude.ai", "d": "Anthropic 长文本与编码", "t": "LLM" }
+            {
+              "n": "DeepSeek",
+              "u": "https://www.deepseek.com",
+              "d": "开源推理模型，数学与代码见长",
+              "t": "LLM"
+            },
+            {
+              "n": "豆包",
+              "u": "https://www.doubao.com",
+              "d": "字节跳动助手，语音与多模态",
+              "t": "LLM"
+            },
+            {
+              "n": "Kimi",
+              "u": "https://kimi.moonshot.cn",
+              "d": "月之暗面，超长上下文",
+              "t": "LLM"
+            },
+            {
+              "n": "通义千问",
+              "u": "https://chat.qwen.ai",
+              "d": "阿里开源多语言模型",
+              "t": "LLM"
+            },
+            {
+              "n": "文心一言",
+              "u": "https://yiyan.baidu.com",
+              "d": "百度文心大模型对话",
+              "t": "LLM"
+            },
+            {
+              "n": "腾讯元宝",
+              "u": "https://yuanbao.tencent.com",
+              "d": "混元 + DeepSeek 双模型",
+              "t": "LLM"
+            },
+            {
+              "n": "智谱清言",
+              "u": "https://chatglm.cn",
+              "d": "AutoGLM 可自主操作应用",
+              "t": "LLM"
+            },
+            {
+              "n": "讯飞星火",
+              "u": "https://xinghuo.xfyun.cn",
+              "d": "语音识别与实时翻译强",
+              "t": "LLM"
+            },
+            {
+              "n": "秘塔 AI 搜索",
+              "u": "https://metaso.cn",
+              "d": "无广告的 AI 搜索",
+              "t": "搜索"
+            },
+            {
+              "n": "天工 AI",
+              "u": "https://www.tiangong.cn",
+              "d": "昆仑万维搜索与写作",
+              "t": "搜索"
+            },
+            {
+              "n": "ChatGPT",
+              "u": "https://chatgpt.com",
+              "d": "OpenAI 通用助手",
+              "t": "LLM"
+            },
+            {
+              "n": "Claude",
+              "u": "https://claude.ai",
+              "d": "Anthropic 长文本与编码",
+              "t": "LLM"
+            }
           ]
         },
         {
           "name": "AI 绘画",
           "sites": [
-            { "n": "即梦", "u": "https://jimeng.jianying.com", "d": "字节图像与视频创作", "t": "图像" },
-            { "n": "通义万相", "u": "https://tongyi.aliyun.com/wanxiang/", "d": "阿里图像视频生成", "t": "图像" },
-            { "n": "LiblibAI", "u": "https://www.liblib.art", "d": "中文 Stable Diffusion 社区", "t": "图像" },
-            { "n": "堆友", "u": "https://d.design", "d": "阿里设计师 AI 素材", "t": "图像" },
-            { "n": "无界 AI", "u": "https://www.wujieai.com", "d": "中文模型与工作流", "t": "图像" },
-            { "n": "文心一格", "u": "https://yige.baidu.com", "d": "百度 AI 艺术创作", "t": "图像" },
-            { "n": "Midjourney", "u": "https://www.midjourney.com", "d": "高质量图像生成", "t": "图像" },
-            { "n": "Civitai", "u": "https://civitai.com", "d": "开源模型与 LoRA 仓库", "t": "模型" },
-            { "n": "Leonardo AI", "u": "https://leonardo.ai", "d": "游戏素材与插画", "t": "图像" }
+            {
+              "n": "即梦",
+              "u": "https://jimeng.jianying.com",
+              "d": "字节图像与视频创作",
+              "t": "图像"
+            },
+            {
+              "n": "通义万相",
+              "u": "https://tongyi.aliyun.com/wanxiang/",
+              "d": "阿里图像视频生成",
+              "t": "图像"
+            },
+            {
+              "n": "LiblibAI",
+              "u": "https://www.liblib.art",
+              "d": "中文 Stable Diffusion 社区",
+              "t": "图像"
+            },
+            {
+              "n": "堆友",
+              "u": "https://d.design",
+              "d": "阿里设计师 AI 素材",
+              "t": "图像"
+            },
+            {
+              "n": "无界 AI",
+              "u": "https://www.wujieai.com",
+              "d": "中文模型与工作流",
+              "t": "图像"
+            },
+            {
+              "n": "文心一格",
+              "u": "https://yige.baidu.com",
+              "d": "百度 AI 艺术创作",
+              "t": "图像"
+            },
+            {
+              "n": "Midjourney",
+              "u": "https://www.midjourney.com",
+              "d": "高质量图像生成",
+              "t": "图像"
+            },
+            {
+              "n": "Civitai",
+              "u": "https://civitai.com",
+              "d": "开源模型与 LoRA 仓库",
+              "t": "模型"
+            },
+            {
+              "n": "Leonardo AI",
+              "u": "https://leonardo.ai",
+              "d": "游戏素材与插画",
+              "t": "图像"
+            }
           ]
         },
         {
           "name": "AI 视频",
           "sites": [
-            { "n": "可灵", "u": "https://klingai.com", "d": "快手文生视频", "t": "视频" },
-            { "n": "海螺 AI", "u": "https://hailuoai.com", "d": "MiniMax 视频与音乐", "t": "视频" },
-            { "n": "Vidu", "u": "https://www.vidu.com", "d": "生数科技图生视频", "t": "视频" },
-            { "n": "Runway", "u": "https://runwayml.com", "d": "Gen 系列视频模型", "t": "视频" },
-            { "n": "Pika", "u": "https://pika.art", "d": "轻量视频特效生成", "t": "视频" },
-            { "n": "Luma", "u": "https://lumalabs.ai", "d": "Dream Machine 视频", "t": "视频" },
-            { "n": "Haiper", "u": "https://haiper.ai", "d": "文生视频与动画", "t": "视频" },
-            { "n": "剪映", "u": "https://www.capcut.cn", "d": "剪辑 + AI 成片", "t": "剪辑" }
+            {
+              "n": "可灵",
+              "u": "https://klingai.com",
+              "d": "快手文生视频",
+              "t": "视频"
+            },
+            {
+              "n": "海螺 AI",
+              "u": "https://hailuoai.com",
+              "d": "MiniMax 视频与音乐",
+              "t": "视频"
+            },
+            {
+              "n": "Vidu",
+              "u": "https://www.vidu.com",
+              "d": "生数科技图生视频",
+              "t": "视频"
+            },
+            {
+              "n": "Runway",
+              "u": "https://runwayml.com",
+              "d": "Gen 系列视频模型",
+              "t": "视频"
+            },
+            {
+              "n": "Pika",
+              "u": "https://pika.art",
+              "d": "轻量视频特效生成",
+              "t": "视频"
+            },
+            {
+              "n": "Luma",
+              "u": "https://lumalabs.ai",
+              "d": "Dream Machine 视频",
+              "t": "视频"
+            },
+            {
+              "n": "Haiper",
+              "u": "https://haiper.ai",
+              "d": "文生视频与动画",
+              "t": "视频"
+            },
+            {
+              "n": "剪映",
+              "u": "https://www.capcut.cn",
+              "d": "剪辑 + AI 成片",
+              "t": "剪辑"
+            }
           ]
         },
         {
           "name": "AI 编程",
           "sites": [
-            { "n": "通义灵码", "u": "https://lingma.aliyun.com", "d": "阿里编码助手", "t": "编码" },
-            { "n": "文心快码", "u": "https://comate.baidu.com", "d": "百度编码助手", "t": "编码" },
-            { "n": "CodeGeeX", "u": "https://codegeex.cn", "d": "智谱开源代码模型", "t": "编码" },
-            { "n": "Cursor", "u": "https://cursor.com", "d": "AI 优先的编辑器", "t": "编码" },
-            { "n": "GitHub Copilot", "u": "https://github.com/features/copilot", "d": "GitHub 官方补全", "t": "编码" },
-            { "n": "Claude Code", "u": "https://claude.com/product/claude-code", "d": "终端内编码代理", "t": "编码" },
-            { "n": "Trae", "u": "https://www.trae.ai", "d": "字节 AI IDE", "t": "编码" },
-            { "n": "Windsurf", "u": "https://windsurf.com", "d": "代理式 IDE", "t": "编码" },
-            { "n": "Replit", "u": "https://replit.com", "d": "浏览器内开发部署", "t": "平台" }
+            {
+              "n": "通义灵码",
+              "u": "https://lingma.aliyun.com",
+              "d": "阿里编码助手",
+              "t": "编码"
+            },
+            {
+              "n": "文心快码",
+              "u": "https://comate.baidu.com",
+              "d": "百度编码助手",
+              "t": "编码"
+            },
+            {
+              "n": "CodeGeeX",
+              "u": "https://codegeex.cn",
+              "d": "智谱开源代码模型",
+              "t": "编码"
+            },
+            {
+              "n": "Cursor",
+              "u": "https://cursor.com",
+              "d": "AI 优先的编辑器",
+              "t": "编码"
+            },
+            {
+              "n": "GitHub Copilot",
+              "u": "https://github.com/features/copilot",
+              "d": "GitHub 官方补全",
+              "t": "编码"
+            },
+            {
+              "n": "Claude Code",
+              "u": "https://claude.com/product/claude-code",
+              "d": "终端内编码代理",
+              "t": "编码"
+            },
+            {
+              "n": "Trae",
+              "u": "https://www.trae.ai",
+              "d": "字节 AI IDE",
+              "t": "编码"
+            },
+            {
+              "n": "Windsurf",
+              "u": "https://windsurf.com",
+              "d": "代理式 IDE",
+              "t": "编码"
+            },
+            {
+              "n": "Replit",
+              "u": "https://replit.com",
+              "d": "浏览器内开发部署",
+              "t": "平台"
+            }
           ]
         },
         {
           "name": "AI 音频",
           "sites": [
-            { "n": "Suno", "u": "https://suno.com", "d": "文生歌曲", "t": "音乐" },
-            { "n": "海绵音乐", "u": "https://www.haimian.com", "d": "字节 AI 音乐", "t": "音乐" },
-            { "n": "网易天音", "u": "https://tianyin.music.163.com", "d": "编曲与填词辅助", "t": "音乐" },
-            { "n": "讯飞智作", "u": "https://peiyin.xunfei.cn", "d": "配音与声音复刻", "t": "配音" },
-            { "n": "ElevenLabs", "u": "https://elevenlabs.io", "d": "多语言语音合成", "t": "配音" },
-            { "n": "Fish Audio", "u": "https://fish.audio", "d": "开源语音克隆", "t": "配音" },
-            { "n": "Udio", "u": "https://www.udio.com", "d": "AI 音乐创作", "t": "音乐" }
+            {
+              "n": "Suno",
+              "u": "https://suno.com",
+              "d": "文生歌曲",
+              "t": "音乐"
+            },
+            {
+              "n": "海绵音乐",
+              "u": "https://www.haimian.com",
+              "d": "字节 AI 音乐",
+              "t": "音乐"
+            },
+            {
+              "n": "网易天音",
+              "u": "https://tianyin.music.163.com",
+              "d": "编曲与填词辅助",
+              "t": "音乐"
+            },
+            {
+              "n": "讯飞智作",
+              "u": "https://peiyin.xunfei.cn",
+              "d": "配音与声音复刻",
+              "t": "配音"
+            },
+            {
+              "n": "ElevenLabs",
+              "u": "https://elevenlabs.io",
+              "d": "多语言语音合成",
+              "t": "配音"
+            },
+            {
+              "n": "Fish Audio",
+              "u": "https://fish.audio",
+              "d": "开源语音克隆",
+              "t": "配音"
+            },
+            {
+              "n": "Udio",
+              "u": "https://www.udio.com",
+              "d": "AI 音乐创作",
+              "t": "音乐"
+            }
           ]
         }
       ]
@@ -83,68 +308,278 @@
         {
           "name": "代码托管",
           "sites": [
-            { "n": "GitHub", "u": "https://github.com", "d": "全球最大开源平台", "t": "托管" },
-            { "n": "Gitee", "u": "https://gitee.com", "d": "国内代码托管", "t": "托管" },
-            { "n": "GitLab", "u": "https://gitlab.com", "d": "自托管 CI 一体", "t": "托管" },
-            { "n": "Coding", "u": "https://coding.net", "d": "腾讯云 DevOps", "t": "托管" },
-            { "n": "Bitbucket", "u": "https://bitbucket.org", "d": "Atlassian 托管", "t": "托管" },
-            { "n": "GitHub Pages", "u": "https://pages.github.com", "d": "静态站点托管", "t": "Pages" },
-            { "n": "GitCode", "u": "https://gitcode.com", "d": "CSDN 代码托管", "t": "托管" }
+            {
+              "n": "GitHub",
+              "u": "https://github.com",
+              "d": "全球最大开源平台",
+              "t": "托管"
+            },
+            {
+              "n": "Gitee",
+              "u": "https://gitee.com",
+              "d": "国内代码托管",
+              "t": "托管"
+            },
+            {
+              "n": "GitLab",
+              "u": "https://gitlab.com",
+              "d": "自托管 CI 一体",
+              "t": "托管"
+            },
+            {
+              "n": "Coding",
+              "u": "https://coding.net",
+              "d": "腾讯云 DevOps",
+              "t": "托管"
+            },
+            {
+              "n": "Bitbucket",
+              "u": "https://bitbucket.org",
+              "d": "Atlassian 托管",
+              "t": "托管"
+            },
+            {
+              "n": "GitHub Pages",
+              "u": "https://pages.github.com",
+              "d": "静态站点托管",
+              "t": "Pages"
+            },
+            {
+              "n": "GitCode",
+              "u": "https://gitcode.com",
+              "d": "CSDN 代码托管",
+              "t": "托管"
+            }
           ]
         },
         {
           "name": "技术社区",
           "sites": [
-            { "n": "Stack Overflow", "u": "https://stackoverflow.com", "d": "编程问答", "t": "问答" },
-            { "n": "掘金", "u": "https://juejin.cn", "d": "中文开发者社区", "t": "社区" },
-            { "n": "V2EX", "u": "https://www.v2ex.com", "d": "创意工作者社区", "t": "社区" },
-            { "n": "SegmentFault", "u": "https://segmentfault.com", "d": "中文技术问答", "t": "问答" },
-            { "n": "博客园", "u": "https://www.cnblogs.com", "d": "老牌技术博客", "t": "博客" },
-            { "n": "CSDN", "u": "https://www.csdn.net", "d": "中文技术内容平台", "t": "社区" },
-            { "n": "Hacker News", "u": "https://news.ycombinator.com", "d": "YC 技术新闻", "t": "社区" },
-            { "n": "Reddit r/programming", "u": "https://www.reddit.com/r/programming/", "d": "编程讨论板", "t": "社区" },
-            { "n": "OSChina", "u": "https://www.oschina.net", "d": "开源中国", "t": "社区" }
+            {
+              "n": "Stack Overflow",
+              "u": "https://stackoverflow.com",
+              "d": "编程问答",
+              "t": "问答"
+            },
+            {
+              "n": "掘金",
+              "u": "https://juejin.cn",
+              "d": "中文开发者社区",
+              "t": "社区"
+            },
+            {
+              "n": "V2EX",
+              "u": "https://www.v2ex.com",
+              "d": "创意工作者社区",
+              "t": "社区"
+            },
+            {
+              "n": "SegmentFault",
+              "u": "https://segmentfault.com",
+              "d": "中文技术问答",
+              "t": "问答"
+            },
+            {
+              "n": "博客园",
+              "u": "https://www.cnblogs.com",
+              "d": "老牌技术博客",
+              "t": "博客"
+            },
+            {
+              "n": "CSDN",
+              "u": "https://www.csdn.net",
+              "d": "中文技术内容平台",
+              "t": "社区"
+            },
+            {
+              "n": "Hacker News",
+              "u": "https://news.ycombinator.com",
+              "d": "YC 技术新闻",
+              "t": "社区"
+            },
+            {
+              "n": "Reddit r/programming",
+              "u": "https://www.reddit.com/r/programming/",
+              "d": "编程讨论板",
+              "t": "社区"
+            },
+            {
+              "n": "OSChina",
+              "u": "https://www.oschina.net",
+              "d": "开源中国",
+              "t": "社区"
+            }
           ]
         },
         {
           "name": "包与依赖",
           "sites": [
-            { "n": "npm", "u": "https://www.npmjs.com", "d": "JavaScript 包", "t": "包管理" },
-            { "n": "PyPI", "u": "https://pypi.org", "d": "Python 包", "t": "包管理" },
-            { "n": "crates.io", "u": "https://crates.io", "d": "Rust 包", "t": "包管理" },
-            { "n": "Maven Central", "u": "https://search.maven.org", "d": "Java 依赖", "t": "包管理" },
-            { "n": "Docker Hub", "u": "https://hub.docker.com", "d": "容器镜像", "t": "镜像" },
-            { "n": "Go Modules", "u": "https://pkg.go.dev", "d": "Go 包文档", "t": "包管理" },
-            { "n": "Homebrew", "u": "https://brew.sh", "d": "macOS 包管理", "t": "包管理" },
-            { "n": "NuGet", "u": "https://www.nuget.org", "d": ".NET 包", "t": "包管理" }
+            {
+              "n": "npm",
+              "u": "https://www.npmjs.com",
+              "d": "JavaScript 包",
+              "t": "包管理"
+            },
+            {
+              "n": "PyPI",
+              "u": "https://pypi.org",
+              "d": "Python 包",
+              "t": "包管理"
+            },
+            {
+              "n": "crates.io",
+              "u": "https://crates.io",
+              "d": "Rust 包",
+              "t": "包管理"
+            },
+            {
+              "n": "Maven Central",
+              "u": "https://search.maven.org",
+              "d": "Java 依赖",
+              "t": "包管理"
+            },
+            {
+              "n": "Docker Hub",
+              "u": "https://hub.docker.com",
+              "d": "容器镜像",
+              "t": "镜像"
+            },
+            {
+              "n": "Go Modules",
+              "u": "https://pkg.go.dev",
+              "d": "Go 包文档",
+              "t": "包管理"
+            },
+            {
+              "n": "Homebrew",
+              "u": "https://brew.sh",
+              "d": "macOS 包管理",
+              "t": "包管理"
+            },
+            {
+              "n": "NuGet",
+              "u": "https://www.nuget.org",
+              "d": ".NET 包",
+              "t": "包管理"
+            }
           ]
         },
         {
           "name": "云服务",
           "sites": [
-            { "n": "阿里云", "u": "https://www.aliyun.com", "d": "国内云主机与云产品", "t": "云" },
-            { "n": "腾讯云", "u": "https://cloud.tencent.com", "d": "云服务器与 CDN", "t": "云" },
-            { "n": "华为云", "u": "https://www.huaweicloud.com", "d": "企业云服务", "t": "云" },
-            { "n": "Cloudflare", "u": "https://www.cloudflare.com", "d": "CDN / Workers / DNS", "t": "云" },
-            { "n": "Vercel", "u": "https://vercel.com", "d": "前端部署平台", "t": "云" },
-            { "n": "Netlify", "u": "https://www.netlify.com", "d": "静态站托管", "t": "云" },
-            { "n": "AWS", "u": "https://aws.amazon.com", "d": "亚马逊云", "t": "云" },
-            { "n": "七牛云", "u": "https://www.qiniu.com", "d": "对象存储与 CDN", "t": "云" },
-            { "n": "又拍云", "u": "https://www.upyun.com", "d": "CDN 与存储", "t": "云" }
+            {
+              "n": "阿里云",
+              "u": "https://www.aliyun.com",
+              "d": "国内云主机与云产品",
+              "t": "云"
+            },
+            {
+              "n": "腾讯云",
+              "u": "https://cloud.tencent.com",
+              "d": "云服务器与 CDN",
+              "t": "云"
+            },
+            {
+              "n": "华为云",
+              "u": "https://www.huaweicloud.com",
+              "d": "企业云服务",
+              "t": "云"
+            },
+            {
+              "n": "Cloudflare",
+              "u": "https://www.cloudflare.com",
+              "d": "CDN / Workers / DNS",
+              "t": "云"
+            },
+            {
+              "n": "Vercel",
+              "u": "https://vercel.com",
+              "d": "前端部署平台",
+              "t": "云"
+            },
+            {
+              "n": "Netlify",
+              "u": "https://www.netlify.com",
+              "d": "静态站托管",
+              "t": "云"
+            },
+            {
+              "n": "AWS",
+              "u": "https://aws.amazon.com",
+              "d": "亚马逊云",
+              "t": "云"
+            },
+            {
+              "n": "七牛云",
+              "u": "https://www.qiniu.com",
+              "d": "对象存储与 CDN",
+              "t": "云"
+            },
+            {
+              "n": "又拍云",
+              "u": "https://www.upyun.com",
+              "d": "CDN 与存储",
+              "t": "云"
+            }
           ]
         },
         {
           "name": "在线工具",
           "sites": [
-            { "n": "菜鸟教程", "u": "https://www.runoob.com", "d": "入门语法速查", "t": "文档" },
-            { "n": "MDN", "u": "https://developer.mozilla.org/zh-CN/", "d": "Web 权威文档", "t": "文档" },
-            { "n": "DevDocs", "u": "https://devdocs.io", "d": "多语言文档聚合", "t": "文档" },
-            { "n": "Regex101", "u": "https://regex101.com", "d": "正则调试", "t": "调试" },
-            { "n": "JSON.cn", "u": "https://www.json.cn", "d": "JSON 格式化", "t": "工具" },
-            { "n": "CodePen", "u": "https://codepen.io", "d": "前端代码演示", "t": "工具" },
-            { "n": "JSFiddle", "u": "https://jsfiddle.net", "d": "在线 JS 沙箱", "t": "工具" },
-            { "n": "Compiler Explorer", "u": "https://godbolt.org", "d": "汇编级代码对比", "t": "工具" },
-            { "n": "Carbon", "u": "https://carbon.now.sh", "d": "代码截图美化", "t": "工具" }
+            {
+              "n": "菜鸟教程",
+              "u": "https://www.runoob.com",
+              "d": "入门语法速查",
+              "t": "文档"
+            },
+            {
+              "n": "MDN",
+              "u": "https://developer.mozilla.org/zh-CN/",
+              "d": "Web 权威文档",
+              "t": "文档"
+            },
+            {
+              "n": "DevDocs",
+              "u": "https://devdocs.io",
+              "d": "多语言文档聚合",
+              "t": "文档"
+            },
+            {
+              "n": "Regex101",
+              "u": "https://regex101.com",
+              "d": "正则调试",
+              "t": "调试"
+            },
+            {
+              "n": "JSON.cn",
+              "u": "https://www.json.cn",
+              "d": "JSON 格式化",
+              "t": "工具"
+            },
+            {
+              "n": "CodePen",
+              "u": "https://codepen.io",
+              "d": "前端代码演示",
+              "t": "工具"
+            },
+            {
+              "n": "JSFiddle",
+              "u": "https://jsfiddle.net",
+              "d": "在线 JS 沙箱",
+              "t": "工具"
+            },
+            {
+              "n": "Compiler Explorer",
+              "u": "https://godbolt.org",
+              "d": "汇编级代码对比",
+              "t": "工具"
+            },
+            {
+              "n": "Carbon",
+              "u": "https://carbon.now.sh",
+              "d": "代码截图美化",
+              "t": "工具"
+            }
           ]
         }
       ]
@@ -155,65 +590,260 @@
         {
           "name": "灵感",
           "sites": [
-            { "n": "Behance", "u": "https://www.behance.net", "d": "Adobe 作品集", "t": "灵感" },
-            { "n": "Dribbble", "u": "https://dribbble.com", "d": "UI 与插画灵感", "t": "灵感" },
-            { "n": "Pinterest", "u": "https://www.pinterest.com", "d": "图片灵感板", "t": "灵感" },
-            { "n": "站酷", "u": "https://www.zcool.com.cn", "d": "中文设计师社区", "t": "灵感" },
-            { "n": "花瓣", "u": "https://huaban.com", "d": "中文图片收藏", "t": "灵感" },
-            { "n": "Awwwards", "u": "https://www.awwwards.com", "d": "网页设计评奖", "t": "灵感" },
-            { "n": "Mobbin", "u": "https://mobbin.com", "d": "App 界面截图库", "t": "参考" },
-            { "n": "Land-book", "u": "https://land-book.com", "d": "落地页案例", "t": "参考" }
+            {
+              "n": "Behance",
+              "u": "https://www.behance.net",
+              "d": "Adobe 作品集",
+              "t": "灵感"
+            },
+            {
+              "n": "Dribbble",
+              "u": "https://dribbble.com",
+              "d": "UI 与插画灵感",
+              "t": "灵感"
+            },
+            {
+              "n": "Pinterest",
+              "u": "https://www.pinterest.com",
+              "d": "图片灵感板",
+              "t": "灵感"
+            },
+            {
+              "n": "站酷",
+              "u": "https://www.zcool.com.cn",
+              "d": "中文设计师社区",
+              "t": "灵感"
+            },
+            {
+              "n": "花瓣",
+              "u": "https://huaban.com",
+              "d": "中文图片收藏",
+              "t": "灵感"
+            },
+            {
+              "n": "Awwwards",
+              "u": "https://www.awwwards.com",
+              "d": "网页设计评奖",
+              "t": "灵感"
+            },
+            {
+              "n": "Mobbin",
+              "u": "https://mobbin.com",
+              "d": "App 界面截图库",
+              "t": "参考"
+            },
+            {
+              "n": "Land-book",
+              "u": "https://land-book.com",
+              "d": "落地页案例",
+              "t": "参考"
+            }
           ]
         },
         {
           "name": "素材",
           "sites": [
-            { "n": "Unsplash", "u": "https://unsplash.com", "d": "免费高清摄影", "t": "图库" },
-            { "n": "Pexels", "u": "https://www.pexels.com", "d": "免费图片视频", "t": "图库" },
-            { "n": "Pixabay", "u": "https://pixabay.com", "d": "免版权素材", "t": "图库" },
-            { "n": "千图网", "u": "https://www.58pic.com", "d": "中文设计素材", "t": "素材" },
-            { "n": "包图网", "u": "https://ibaotu.com", "d": "模板与视频素材", "t": "素材" },
-            { "n": "觅元素", "u": "https://www.51yuansu.com", "d": "免抠 PNG", "t": "素材" },
-            { "n": "Iconfont", "u": "https://www.iconfont.cn", "d": "阿里矢量图标库", "t": "图标" },
-            { "n": "Freepik", "u": "https://www.freepik.com", "d": "矢量与插画", "t": "素材" }
+            {
+              "n": "Unsplash",
+              "u": "https://unsplash.com",
+              "d": "免费高清摄影",
+              "t": "图库"
+            },
+            {
+              "n": "Pexels",
+              "u": "https://www.pexels.com",
+              "d": "免费图片视频",
+              "t": "图库"
+            },
+            {
+              "n": "Pixabay",
+              "u": "https://pixabay.com",
+              "d": "免版权素材",
+              "t": "图库"
+            },
+            {
+              "n": "千图网",
+              "u": "https://www.58pic.com",
+              "d": "中文设计素材",
+              "t": "素材"
+            },
+            {
+              "n": "包图网",
+              "u": "https://ibaotu.com",
+              "d": "模板与视频素材",
+              "t": "素材"
+            },
+            {
+              "n": "觅元素",
+              "u": "https://www.51yuansu.com",
+              "d": "免抠 PNG",
+              "t": "素材"
+            },
+            {
+              "n": "Iconfont",
+              "u": "https://www.iconfont.cn",
+              "d": "阿里矢量图标库",
+              "t": "图标"
+            },
+            {
+              "n": "Freepik",
+              "u": "https://www.freepik.com",
+              "d": "矢量与插画",
+              "t": "素材"
+            }
           ]
         },
         {
           "name": "图标字体",
           "sites": [
-            { "n": "Font Awesome", "u": "https://fontawesome.com", "d": "通用图标集", "t": "图标" },
-            { "n": "Google Fonts", "u": "https://fonts.google.com", "d": "免费字体", "t": "字体" },
-            { "n": "Lucide", "u": "https://lucide.dev", "d": "开源线性图标", "t": "图标" },
-            { "n": "Remix Icon", "u": "https://remixicon.com", "d": "中性风格图标", "t": "图标" },
-            { "n": "字体天下", "u": "https://www.fonts.net.cn", "d": "中文字体下载", "t": "字体" },
-            { "n": "字由", "u": "https://www.hellofont.cn", "d": "商用字体客户端", "t": "字体" },
-            { "n": "Iconify", "u": "https://icon-sets.iconify.design", "d": "图标集合检索", "t": "图标" },
-            { "n": "Simple Icons", "u": "https://simpleicons.org", "d": "品牌图标 SVG", "t": "图标" }
+            {
+              "n": "Font Awesome",
+              "u": "https://fontawesome.com",
+              "d": "通用图标集",
+              "t": "图标"
+            },
+            {
+              "n": "Google Fonts",
+              "u": "https://fonts.google.com",
+              "d": "免费字体",
+              "t": "字体"
+            },
+            {
+              "n": "Lucide",
+              "u": "https://lucide.dev",
+              "d": "开源线性图标",
+              "t": "图标"
+            },
+            {
+              "n": "Remix Icon",
+              "u": "https://remixicon.com",
+              "d": "中性风格图标",
+              "t": "图标"
+            },
+            {
+              "n": "字体天下",
+              "u": "https://www.fonts.net.cn",
+              "d": "中文字体下载",
+              "t": "字体"
+            },
+            {
+              "n": "字由",
+              "u": "https://www.hellofont.cn",
+              "d": "商用字体客户端",
+              "t": "字体"
+            },
+            {
+              "n": "Iconify",
+              "u": "https://icon-sets.iconify.design",
+              "d": "图标集合检索",
+              "t": "图标"
+            },
+            {
+              "n": "Simple Icons",
+              "u": "https://simpleicons.org",
+              "d": "品牌图标 SVG",
+              "t": "图标"
+            }
           ]
         },
         {
           "name": "配色",
           "sites": [
-            { "n": "Coolors", "u": "https://coolors.co", "d": "配色生成器", "t": "配色" },
-            { "n": "Adobe Color", "u": "https://color.adobe.com", "d": "色轮与主题", "t": "配色" },
-            { "n": "中国色", "u": "http://zhongguose.com", "d": "传统色色谱", "t": "配色" },
-            { "n": "Color Hunt", "u": "https://colorhunt.co", "d": "流行配色集", "t": "配色" },
-            { "n": "Happy Hues", "u": "https://www.happyhues.co", "d": "配色实战示例", "t": "配色" },
-            { "n": "Realtime Colors", "u": "https://realtimecolors.com", "d": "实时预览配色", "t": "配色" },
-            { "n": "Material Palette", "u": "https://m2.material.io/design/color", "d": "Material 色板", "t": "配色" }
+            {
+              "n": "Coolors",
+              "u": "https://coolors.co",
+              "d": "配色生成器",
+              "t": "配色"
+            },
+            {
+              "n": "Adobe Color",
+              "u": "https://color.adobe.com",
+              "d": "色轮与主题",
+              "t": "配色"
+            },
+            {
+              "n": "中国色",
+              "u": "http://zhongguose.com",
+              "d": "传统色色谱",
+              "t": "配色"
+            },
+            {
+              "n": "Color Hunt",
+              "u": "https://colorhunt.co",
+              "d": "流行配色集",
+              "t": "配色"
+            },
+            {
+              "n": "Happy Hues",
+              "u": "https://www.happyhues.co",
+              "d": "配色实战示例",
+              "t": "配色"
+            },
+            {
+              "n": "Realtime Colors",
+              "u": "https://realtimecolors.com",
+              "d": "实时预览配色",
+              "t": "配色"
+            },
+            {
+              "n": "Material Palette",
+              "u": "https://m2.material.io/design/color",
+              "d": "Material 色板",
+              "t": "配色"
+            }
           ]
         },
         {
           "name": "原型协作",
           "sites": [
-            { "n": "Figma", "u": "https://www.figma.com", "d": "在线设计协作", "t": "原型" },
-            { "n": "MasterGo", "u": "https://mastergo.com", "d": "国产在线设计", "t": "原型" },
-            { "n": "即时设计", "u": "https://js.design", "d": "中文 Figma 替代", "t": "原型" },
-            { "n": "墨刀", "u": "https://modao.cc", "d": "原型与流程图", "t": "原型" },
-            { "n": "Canva", "u": "https://www.canva.com", "d": "模板化设计", "t": "模板" },
-            { "n": "稿定设计", "u": "https://www.gaoding.com", "d": "电商与新媒体图", "t": "模板" },
-            { "n": "创客贴", "u": "https://www.chuangkit.com", "d": "在线海报模板", "t": "模板" },
-            { "n": "Penpot", "u": "https://penpot.app", "d": "开源设计平台", "t": "原型" }
+            {
+              "n": "Figma",
+              "u": "https://www.figma.com",
+              "d": "在线设计协作",
+              "t": "原型"
+            },
+            {
+              "n": "MasterGo",
+              "u": "https://mastergo.com",
+              "d": "国产在线设计",
+              "t": "原型"
+            },
+            {
+              "n": "即时设计",
+              "u": "https://js.design",
+              "d": "中文 Figma 替代",
+              "t": "原型"
+            },
+            {
+              "n": "墨刀",
+              "u": "https://modao.cc",
+              "d": "原型与流程图",
+              "t": "原型"
+            },
+            {
+              "n": "Canva",
+              "u": "https://www.canva.com",
+              "d": "模板化设计",
+              "t": "模板"
+            },
+            {
+              "n": "稿定设计",
+              "u": "https://www.gaoding.com",
+              "d": "电商与新媒体图",
+              "t": "模板"
+            },
+            {
+              "n": "创客贴",
+              "u": "https://www.chuangkit.com",
+              "d": "在线海报模板",
+              "t": "模板"
+            },
+            {
+              "n": "Penpot",
+              "u": "https://penpot.app",
+              "d": "开源设计平台",
+              "t": "原型"
+            }
           ]
         }
       ]
@@ -224,51 +854,201 @@
         {
           "name": "笔记",
           "sites": [
-            { "n": "Notion", "u": "https://www.notion.so", "d": "文档数据库一体", "t": "笔记" },
-            { "n": "语雀", "u": "https://www.yuque.com", "d": "蚂蚁知识库", "t": "笔记" },
-            { "n": "flomo", "u": "https://flomoapp.com", "d": "碎片记录", "t": "笔记" },
-            { "n": "Obsidian", "u": "https://obsidian.md", "d": "本地 Markdown 双链", "t": "笔记" },
-            { "n": "飞书文档", "u": "https://www.feishu.cn/product/docs", "d": "在线协同文档", "t": "文档" },
-            { "n": "有道云笔记", "u": "https://note.youdao.com", "d": "中文云笔记", "t": "笔记" },
-            { "n": "Logseq", "u": "https://logseq.com", "d": "开源大纲笔记", "t": "笔记" },
-            { "n": "思源笔记", "u": "https://b3log.org/siyuan/", "d": "本地优先笔记", "t": "笔记" }
+            {
+              "n": "Notion",
+              "u": "https://www.notion.so",
+              "d": "文档数据库一体",
+              "t": "笔记"
+            },
+            {
+              "n": "语雀",
+              "u": "https://www.yuque.com",
+              "d": "蚂蚁知识库",
+              "t": "笔记"
+            },
+            {
+              "n": "flomo",
+              "u": "https://flomoapp.com",
+              "d": "碎片记录",
+              "t": "笔记"
+            },
+            {
+              "n": "Obsidian",
+              "u": "https://obsidian.md",
+              "d": "本地 Markdown 双链",
+              "t": "笔记"
+            },
+            {
+              "n": "飞书文档",
+              "u": "https://www.feishu.cn/product/docs",
+              "d": "在线协同文档",
+              "t": "文档"
+            },
+            {
+              "n": "有道云笔记",
+              "u": "https://note.youdao.com",
+              "d": "中文云笔记",
+              "t": "笔记"
+            },
+            {
+              "n": "Logseq",
+              "u": "https://logseq.com",
+              "d": "开源大纲笔记",
+              "t": "笔记"
+            },
+            {
+              "n": "思源笔记",
+              "u": "https://b3log.org/siyuan/",
+              "d": "本地优先笔记",
+              "t": "笔记"
+            }
           ]
         },
         {
           "name": "待办日程",
           "sites": [
-            { "n": "滴答清单", "u": "https://dida365.com", "d": "待办与番茄钟", "t": "待办" },
-            { "n": "Todoist", "u": "https://todoist.com", "d": "跨平台待办", "t": "待办" },
-            { "n": "飞书日历", "u": "https://www.feishu.cn/product/calendar", "d": "团队日程", "t": "日历" },
-            { "n": "Google Calendar", "u": "https://calendar.google.com", "d": "谷歌日历", "t": "日历" },
-            { "n": "Notion Calendar", "u": "https://www.notion.com/product/calendar", "d": "日历与任务联动", "t": "日历" },
-            { "n": "Forest", "u": "https://www.forestapp.cc", "d": "专注种树", "t": "专注" },
-            { "n": "潮汐", "u": "https://tide.moreless.io", "d": "白噪音与专注计时", "t": "专注" }
+            {
+              "n": "滴答清单",
+              "u": "https://dida365.com",
+              "d": "待办与番茄钟",
+              "t": "待办"
+            },
+            {
+              "n": "Todoist",
+              "u": "https://todoist.com",
+              "d": "跨平台待办",
+              "t": "待办"
+            },
+            {
+              "n": "飞书日历",
+              "u": "https://www.feishu.cn/product/calendar",
+              "d": "团队日程",
+              "t": "日历"
+            },
+            {
+              "n": "Google Calendar",
+              "u": "https://calendar.google.com",
+              "d": "谷歌日历",
+              "t": "日历"
+            },
+            {
+              "n": "Notion Calendar",
+              "u": "https://www.notion.com/product/calendar",
+              "d": "日历与任务联动",
+              "t": "日历"
+            },
+            {
+              "n": "Forest",
+              "u": "https://www.forestapp.cc",
+              "d": "专注种树",
+              "t": "专注"
+            },
+            {
+              "n": "潮汐",
+              "u": "https://tide.moreless.io",
+              "d": "白噪音与专注计时",
+              "t": "专注"
+            }
           ]
         },
         {
           "name": "团队协作",
           "sites": [
-            { "n": "飞书", "u": "https://www.feishu.cn", "d": "文档 IM 一体", "t": "协作" },
-            { "n": "钉钉", "u": "https://www.dingtalk.com", "d": "阿里办公平台", "t": "协作" },
-            { "n": "企业微信", "u": "https://work.weixin.qq.com", "d": "微信生态办公", "t": "协作" },
-            { "n": "Slack", "u": "https://slack.com", "d": "频道式沟通", "t": "协作" },
-            { "n": "腾讯会议", "u": "https://meeting.tencent.com", "d": "在线会议", "t": "会议" },
-            { "n": "Zoom", "u": "https://zoom.us", "d": "视频会议", "t": "会议" },
-            { "n": "Lark", "u": "https://www.larksuite.com", "d": "飞书国际版", "t": "协作" },
-            { "n": "Miro", "u": "https://miro.com", "d": "在线白板", "t": "白板" }
+            {
+              "n": "飞书",
+              "u": "https://www.feishu.cn",
+              "d": "文档 IM 一体",
+              "t": "协作"
+            },
+            {
+              "n": "钉钉",
+              "u": "https://www.dingtalk.com",
+              "d": "阿里办公平台",
+              "t": "协作"
+            },
+            {
+              "n": "企业微信",
+              "u": "https://work.weixin.qq.com",
+              "d": "微信生态办公",
+              "t": "协作"
+            },
+            {
+              "n": "Slack",
+              "u": "https://slack.com",
+              "d": "频道式沟通",
+              "t": "协作"
+            },
+            {
+              "n": "腾讯会议",
+              "u": "https://meeting.tencent.com",
+              "d": "在线会议",
+              "t": "会议"
+            },
+            {
+              "n": "Zoom",
+              "u": "https://zoom.us",
+              "d": "视频会议",
+              "t": "会议"
+            },
+            {
+              "n": "Lark",
+              "u": "https://www.larksuite.com",
+              "d": "飞书国际版",
+              "t": "协作"
+            },
+            {
+              "n": "Miro",
+              "u": "https://miro.com",
+              "d": "在线白板",
+              "t": "白板"
+            }
           ]
         },
         {
           "name": "自动化",
           "sites": [
-            { "n": "Zapier", "u": "https://zapier.com", "d": "应用间自动串联", "t": "自动化" },
-            { "n": "Make", "u": "https://www.make.com", "d": "可视化流程编排", "t": "自动化" },
-            { "n": "n8n", "u": "https://n8n.io", "d": "开源工作流", "t": "自动化" },
-            { "n": "集简云", "u": "https://www.jijyun.cn", "d": "国产无代码集成", "t": "自动化" },
-            { "n": "IFTTT", "u": "https://ifttt.com", "d": "简单触发动作", "t": "自动化" },
-            { "n": "影刀 RPA", "u": "https://www.yingdao.com", "d": "桌面流程自动化", "t": "RPA" },
-            { "n": "快捷指令", "u": "https://support.apple.com/guide/shortcuts/welcome/ios", "d": "iOS 自动化", "t": "自动化" }
+            {
+              "n": "Zapier",
+              "u": "https://zapier.com",
+              "d": "应用间自动串联",
+              "t": "自动化"
+            },
+            {
+              "n": "Make",
+              "u": "https://www.make.com",
+              "d": "可视化流程编排",
+              "t": "自动化"
+            },
+            {
+              "n": "n8n",
+              "u": "https://n8n.io",
+              "d": "开源工作流",
+              "t": "自动化"
+            },
+            {
+              "n": "集简云",
+              "u": "https://www.jijyun.cn",
+              "d": "国产无代码集成",
+              "t": "自动化"
+            },
+            {
+              "n": "IFTTT",
+              "u": "https://ifttt.com",
+              "d": "简单触发动作",
+              "t": "自动化"
+            },
+            {
+              "n": "影刀 RPA",
+              "u": "https://www.yingdao.com",
+              "d": "桌面流程自动化",
+              "t": "RPA"
+            },
+            {
+              "n": "快捷指令",
+              "u": "https://support.apple.com/guide/shortcuts/welcome/ios",
+              "d": "iOS 自动化",
+              "t": "自动化"
+            }
           ]
         }
       ]
@@ -279,50 +1059,195 @@
         {
           "name": "编程教程",
           "sites": [
-            { "n": "freeCodeCamp", "u": "https://www.freecodecamp.org", "d": "免费全栈课程", "t": "课程" },
-            { "n": "慕课网", "u": "https://www.imooc.com", "d": "中文编程课", "t": "课程" },
-            { "n": "极客时间", "u": "https://time.geekbang.org", "d": "技术专栏", "t": "课程" },
-            { "n": "B 站知识区", "u": "https://www.bilibili.com/v/knowledge/", "d": "免费视频教程", "t": "视频" },
-            { "n": "The Odin Project", "u": "https://www.theodinproject.com", "d": "开源全栈路径", "t": "课程" },
-            { "n": "Codecademy", "u": "https://www.codecademy.com", "d": "交互式编程入门", "t": "课程" },
-            { "n": "廖雪峰教程", "u": "https://liaoxuefeng.com", "d": "中文入门教程", "t": "教程" },
-            { "n": "Roadmap.sh", "u": "https://roadmap.sh", "d": "技能学习路线", "t": "路线" }
+            {
+              "n": "freeCodeCamp",
+              "u": "https://www.freecodecamp.org",
+              "d": "免费全栈课程",
+              "t": "课程"
+            },
+            {
+              "n": "慕课网",
+              "u": "https://www.imooc.com",
+              "d": "中文编程课",
+              "t": "课程"
+            },
+            {
+              "n": "极客时间",
+              "u": "https://time.geekbang.org",
+              "d": "技术专栏",
+              "t": "课程"
+            },
+            {
+              "n": "B 站知识区",
+              "u": "https://www.bilibili.com/v/knowledge/",
+              "d": "免费视频教程",
+              "t": "视频"
+            },
+            {
+              "n": "The Odin Project",
+              "u": "https://www.theodinproject.com",
+              "d": "开源全栈路径",
+              "t": "课程"
+            },
+            {
+              "n": "Codecademy",
+              "u": "https://www.codecademy.com",
+              "d": "交互式编程入门",
+              "t": "课程"
+            },
+            {
+              "n": "廖雪峰教程",
+              "u": "https://liaoxuefeng.com",
+              "d": "中文入门教程",
+              "t": "教程"
+            },
+            {
+              "n": "Roadmap.sh",
+              "u": "https://roadmap.sh",
+              "d": "技能学习路线",
+              "t": "路线"
+            }
           ]
         },
         {
           "name": "公开课",
           "sites": [
-            { "n": "中国大学 MOOC", "u": "https://www.icourse163.org", "d": "国内高校课程", "t": "公开课" },
-            { "n": "Coursera", "u": "https://www.coursera.org", "d": "全球名校课程", "t": "公开课" },
-            { "n": "edX", "u": "https://www.edx.org", "d": "MIT 哈佛课程", "t": "公开课" },
-            { "n": "网易公开课", "u": "https://open.163.com", "d": "中文字幕名校课", "t": "公开课" },
-            { "n": "Khan Academy", "u": "https://www.khanacademy.org", "d": "免费基础教育", "t": "公开课" },
-            { "n": "MIT OpenCourseWare", "u": "https://ocw.mit.edu", "d": "MIT 全部课程资料", "t": "公开课" },
-            { "n": "可汗中文", "u": "https://zh.khanacademy.org", "d": "Khan 中文站", "t": "公开课" }
+            {
+              "n": "中国大学 MOOC",
+              "u": "https://www.icourse163.org",
+              "d": "国内高校课程",
+              "t": "公开课"
+            },
+            {
+              "n": "Coursera",
+              "u": "https://www.coursera.org",
+              "d": "全球名校课程",
+              "t": "公开课"
+            },
+            {
+              "n": "edX",
+              "u": "https://www.edx.org",
+              "d": "MIT 哈佛课程",
+              "t": "公开课"
+            },
+            {
+              "n": "网易公开课",
+              "u": "https://open.163.com",
+              "d": "中文字幕名校课",
+              "t": "公开课"
+            },
+            {
+              "n": "Khan Academy",
+              "u": "https://www.khanacademy.org",
+              "d": "免费基础教育",
+              "t": "公开课"
+            },
+            {
+              "n": "MIT OpenCourseWare",
+              "u": "https://ocw.mit.edu",
+              "d": "MIT 全部课程资料",
+              "t": "公开课"
+            },
+            {
+              "n": "可汗中文",
+              "u": "https://zh.khanacademy.org",
+              "d": "Khan 中文站",
+              "t": "公开课"
+            }
           ]
         },
         {
           "name": "刷题",
           "sites": [
-            { "n": "LeetCode", "u": "https://leetcode.cn", "d": "面试算法题库", "t": "算法" },
-            { "n": "牛客网", "u": "https://www.nowcoder.com", "d": "笔试与面经", "t": "题库" },
-            { "n": "Codeforces", "u": "https://codeforces.com", "d": "竞赛编程", "t": "竞赛" },
-            { "n": "洛谷", "u": "https://www.luogu.com.cn", "d": "中文算法题库", "t": "算法" },
-            { "n": "HackerRank", "u": "https://www.hackerrank.com", "d": "技能测评", "t": "题库" },
-            { "n": "Codewars", "u": "https://www.codewars.com", "d": "关卡式练习", "t": "题库" },
-            { "n": "LintCode", "u": "https://www.lintcode.com", "d": "中文算法题", "t": "算法" }
+            {
+              "n": "LeetCode",
+              "u": "https://leetcode.cn",
+              "d": "面试算法题库",
+              "t": "算法"
+            },
+            {
+              "n": "牛客网",
+              "u": "https://www.nowcoder.com",
+              "d": "笔试与面经",
+              "t": "题库"
+            },
+            {
+              "n": "Codeforces",
+              "u": "https://codeforces.com",
+              "d": "竞赛编程",
+              "t": "竞赛"
+            },
+            {
+              "n": "洛谷",
+              "u": "https://www.luogu.com.cn",
+              "d": "中文算法题库",
+              "t": "算法"
+            },
+            {
+              "n": "HackerRank",
+              "u": "https://www.hackerrank.com",
+              "d": "技能测评",
+              "t": "题库"
+            },
+            {
+              "n": "Codewars",
+              "u": "https://www.codewars.com",
+              "d": "关卡式练习",
+              "t": "题库"
+            },
+            {
+              "n": "LintCode",
+              "u": "https://www.lintcode.com",
+              "d": "中文算法题",
+              "t": "算法"
+            }
           ]
         },
         {
           "name": "外语",
           "sites": [
-            { "n": "扇贝", "u": "https://www.shanbay.com", "d": "单词与阅读", "t": "英语" },
-            { "n": "百词斩", "u": "https://www.baicizhan.com", "d": "图背单词", "t": "英语" },
-            { "n": "墨墨背单词", "u": "https://www.maimemo.com", "d": "记忆曲线背词", "t": "英语" },
-            { "n": "多邻国", "u": "https://www.duolingo.com", "d": "多语言闯关", "t": "外语" },
-            { "n": "有道词典", "u": "https://dict.youdao.com", "d": "词典与翻译", "t": "词典" },
-            { "n": "Cambridge Dictionary", "u": "https://dictionary.cambridge.org", "d": "英英词典", "t": "词典" },
-            { "n": "Anki", "u": "https://apps.ankiweb.net", "d": "开源记忆卡", "t": "记忆" }
+            {
+              "n": "扇贝",
+              "u": "https://www.shanbay.com",
+              "d": "单词与阅读",
+              "t": "英语"
+            },
+            {
+              "n": "百词斩",
+              "u": "https://www.baicizhan.com",
+              "d": "图背单词",
+              "t": "英语"
+            },
+            {
+              "n": "墨墨背单词",
+              "u": "https://www.maimemo.com",
+              "d": "记忆曲线背词",
+              "t": "英语"
+            },
+            {
+              "n": "多邻国",
+              "u": "https://www.duolingo.com",
+              "d": "多语言闯关",
+              "t": "外语"
+            },
+            {
+              "n": "有道词典",
+              "u": "https://dict.youdao.com",
+              "d": "词典与翻译",
+              "t": "词典"
+            },
+            {
+              "n": "Cambridge Dictionary",
+              "u": "https://dictionary.cambridge.org",
+              "d": "英英词典",
+              "t": "词典"
+            },
+            {
+              "n": "Anki",
+              "u": "https://apps.ankiweb.net",
+              "d": "开源记忆卡",
+              "t": "记忆"
+            }
           ]
         }
       ]
@@ -333,52 +1258,207 @@
         {
           "name": "科技媒体",
           "sites": [
-            { "n": "36 氪", "u": "https://36kr.com", "d": "创投与商业", "t": "媒体" },
-            { "n": "虎嗅", "u": "https://www.huxiu.com", "d": "商业科技评论", "t": "媒体" },
-            { "n": "爱范儿", "u": "https://www.ifanr.com", "d": "消费电子", "t": "媒体" },
-            { "n": "IT 之家", "u": "https://www.ithome.com", "d": "数码快讯", "t": "媒体" },
-            { "n": "量子位", "u": "https://www.qbitai.com", "d": "AI 前沿报道", "t": "媒体" },
-            { "n": "机器之心", "u": "https://www.jiqizhixin.com", "d": "AI 学术与产业", "t": "媒体" },
-            { "n": "少数派", "u": "https://sspai.com", "d": "效率与数字生活", "t": "媒体" },
-            { "n": "The Verge", "u": "https://www.theverge.com", "d": "科技文化", "t": "媒体" },
-            { "n": "TechCrunch", "u": "https://techcrunch.com", "d": "创业与融资", "t": "媒体" }
+            {
+              "n": "36 氪",
+              "u": "https://36kr.com",
+              "d": "创投与商业",
+              "t": "媒体"
+            },
+            {
+              "n": "虎嗅",
+              "u": "https://www.huxiu.com",
+              "d": "商业科技评论",
+              "t": "媒体"
+            },
+            {
+              "n": "爱范儿",
+              "u": "https://www.ifanr.com",
+              "d": "消费电子",
+              "t": "媒体"
+            },
+            {
+              "n": "IT 之家",
+              "u": "https://www.ithome.com",
+              "d": "数码快讯",
+              "t": "媒体"
+            },
+            {
+              "n": "量子位",
+              "u": "https://www.qbitai.com",
+              "d": "AI 前沿报道",
+              "t": "媒体"
+            },
+            {
+              "n": "机器之心",
+              "u": "https://www.jiqizhixin.com",
+              "d": "AI 学术与产业",
+              "t": "媒体"
+            },
+            {
+              "n": "少数派",
+              "u": "https://sspai.com",
+              "d": "效率与数字生活",
+              "t": "媒体"
+            },
+            {
+              "n": "The Verge",
+              "u": "https://www.theverge.com",
+              "d": "科技文化",
+              "t": "媒体"
+            },
+            {
+              "n": "TechCrunch",
+              "u": "https://techcrunch.com",
+              "d": "创业与融资",
+              "t": "媒体"
+            }
           ]
         },
         {
           "name": "社区",
           "sites": [
-            { "n": "知乎", "u": "https://www.zhihu.com", "d": "问答社区", "t": "社区" },
-            { "n": "豆瓣", "u": "https://www.douban.com", "d": "书影音与小组", "t": "社区" },
-            { "n": "微博", "u": "https://weibo.com", "d": "公共讨论", "t": "社区" },
-            { "n": "小红书", "u": "https://www.xiaohongshu.com", "d": "生活方式分享", "t": "社区" },
-            { "n": "百度贴吧", "u": "https://tieba.baidu.com", "d": "兴趣主题吧", "t": "社区" },
-            { "n": "Reddit", "u": "https://www.reddit.com", "d": "全球板块讨论", "t": "社区" },
-            { "n": "Product Hunt", "u": "https://www.producthunt.com", "d": "每日新产品", "t": "社区" },
-            { "n": "即刻", "u": "https://web.okjike.com", "d": "年轻兴趣圈", "t": "社区" }
+            {
+              "n": "知乎",
+              "u": "https://www.zhihu.com",
+              "d": "问答社区",
+              "t": "社区"
+            },
+            {
+              "n": "豆瓣",
+              "u": "https://www.douban.com",
+              "d": "书影音与小组",
+              "t": "社区"
+            },
+            {
+              "n": "微博",
+              "u": "https://weibo.com",
+              "d": "公共讨论",
+              "t": "社区"
+            },
+            {
+              "n": "小红书",
+              "u": "https://www.xiaohongshu.com",
+              "d": "生活方式分享",
+              "t": "社区"
+            },
+            {
+              "n": "百度贴吧",
+              "u": "https://tieba.baidu.com",
+              "d": "兴趣主题吧",
+              "t": "社区"
+            },
+            {
+              "n": "Reddit",
+              "u": "https://www.reddit.com",
+              "d": "全球板块讨论",
+              "t": "社区"
+            },
+            {
+              "n": "Product Hunt",
+              "u": "https://www.producthunt.com",
+              "d": "每日新产品",
+              "t": "社区"
+            },
+            {
+              "n": "即刻",
+              "u": "https://web.okjike.com",
+              "d": "年轻兴趣圈",
+              "t": "社区"
+            }
           ]
         },
         {
           "name": "独立博客",
           "sites": [
-            { "n": "阮一峰网络日志", "u": "https://www.ruanyifeng.com/blog/", "d": "技术与思考", "t": "博客" },
-            { "n": "科技爱好者周刊", "u": "https://www.ruanyifeng.com/blog/weekly/", "d": "每周技术精选", "t": "周刊" },
-            { "n": "美团技术团队", "u": "https://tech.meituan.com", "d": "一线工程实践", "t": "博客" },
-            { "n": "Julia Evans", "u": "https://jvns.ca", "d": "系统调试笔记", "t": "博客" },
-            { "n": "Simon Willison", "u": "https://simonwillison.net", "d": "LLM 与工程实践", "t": "博客" },
-            { "n": "周报 Hacker Newsletter", "u": "https://hackernewsletter.com", "d": "HN 每周精选", "t": "周刊" },
-            { "n": "少数派 Matrix", "u": "https://sspai.com/matrix", "d": "社区写作", "t": "社区" }
+            {
+              "n": "阮一峰网络日志",
+              "u": "https://www.ruanyifeng.com/blog/",
+              "d": "技术与思考",
+              "t": "博客"
+            },
+            {
+              "n": "科技爱好者周刊",
+              "u": "https://www.ruanyifeng.com/blog/weekly/",
+              "d": "每周技术精选",
+              "t": "周刊"
+            },
+            {
+              "n": "美团技术团队",
+              "u": "https://tech.meituan.com",
+              "d": "一线工程实践",
+              "t": "博客"
+            },
+            {
+              "n": "Julia Evans",
+              "u": "https://jvns.ca",
+              "d": "系统调试笔记",
+              "t": "博客"
+            },
+            {
+              "n": "Simon Willison",
+              "u": "https://simonwillison.net",
+              "d": "LLM 与工程实践",
+              "t": "博客"
+            },
+            {
+              "n": "周报 Hacker Newsletter",
+              "u": "https://hackernewsletter.com",
+              "d": "HN 每周精选",
+              "t": "周刊"
+            },
+            {
+              "n": "少数派 Matrix",
+              "u": "https://sspai.com/matrix",
+              "d": "社区写作",
+              "t": "社区"
+            }
           ]
         },
         {
           "name": "产品发现",
           "sites": [
-            { "n": "AlternativeTo", "u": "https://alternativeto.net", "d": "软件替代品查询", "t": "发现" },
-            { "n": "G2", "u": "https://www.g2.com", "d": "企业软件评测", "t": "评测" },
-            { "n": "AppSumo", "u": "https://appsumo.com", "d": "终身优惠软件", "t": "优惠" },
-            { "n": "未来百科", "u": "https://www.futurepedia.io", "d": "AI 工具目录", "t": "目录" },
-            { "n": "AI 工具集", "u": "https://ai-bot.cn", "d": "中文 AI 工具导航", "t": "目录" },
-            { "n": "There's An AI For That", "u": "https://theresanaiforthat.com", "d": "按任务找 AI", "t": "目录" },
-            { "n": "Hugging Face Spaces", "u": "https://huggingface.co/spaces", "d": "开源 AI 演示", "t": "目录" }
+            {
+              "n": "AlternativeTo",
+              "u": "https://alternativeto.net",
+              "d": "软件替代品查询",
+              "t": "发现"
+            },
+            {
+              "n": "G2",
+              "u": "https://www.g2.com",
+              "d": "企业软件评测",
+              "t": "评测"
+            },
+            {
+              "n": "AppSumo",
+              "u": "https://appsumo.com",
+              "d": "终身优惠软件",
+              "t": "优惠"
+            },
+            {
+              "n": "未来百科",
+              "u": "https://www.futurepedia.io",
+              "d": "AI 工具目录",
+              "t": "目录"
+            },
+            {
+              "n": "AI 工具集",
+              "u": "https://ai-bot.cn",
+              "d": "中文 AI 工具导航",
+              "t": "目录"
+            },
+            {
+              "n": "There's An AI For That",
+              "u": "https://theresanaiforthat.com",
+              "d": "按任务找 AI",
+              "t": "目录"
+            },
+            {
+              "n": "Hugging Face Spaces",
+              "u": "https://huggingface.co/spaces",
+              "d": "开源 AI 演示",
+              "t": "目录"
+            }
           ]
         }
       ]
@@ -389,48 +1469,183 @@
         {
           "name": "视频",
           "sites": [
-            { "n": "哔哩哔哩", "u": "https://www.bilibili.com", "d": "弹幕视频社区", "t": "视频" },
-            { "n": "腾讯视频", "u": "https://v.qq.com", "d": "影视综艺", "t": "视频" },
-            { "n": "爱奇艺", "u": "https://www.iqiyi.com", "d": "剧集与电影", "t": "视频" },
-            { "n": "优酷", "u": "https://www.youku.com", "d": "阿里视频平台", "t": "视频" },
-            { "n": "芒果 TV", "u": "https://www.mgtv.com", "d": "综艺见长", "t": "视频" },
-            { "n": "YouTube", "u": "https://www.youtube.com", "d": "全球视频平台", "t": "视频" },
-            { "n": "抖音", "u": "https://www.douyin.com", "d": "短视频", "t": "短视频" },
-            { "n": "快手", "u": "https://www.kuaishou.com", "d": "短视频与直播", "t": "短视频" }
+            {
+              "n": "哔哩哔哩",
+              "u": "https://www.bilibili.com",
+              "d": "弹幕视频社区",
+              "t": "视频"
+            },
+            {
+              "n": "腾讯视频",
+              "u": "https://v.qq.com",
+              "d": "影视综艺",
+              "t": "视频"
+            },
+            {
+              "n": "爱奇艺",
+              "u": "https://www.iqiyi.com",
+              "d": "剧集与电影",
+              "t": "视频"
+            },
+            {
+              "n": "优酷",
+              "u": "https://www.youku.com",
+              "d": "阿里视频平台",
+              "t": "视频"
+            },
+            {
+              "n": "芒果 TV",
+              "u": "https://www.mgtv.com",
+              "d": "综艺见长",
+              "t": "视频"
+            },
+            {
+              "n": "YouTube",
+              "u": "https://www.youtube.com",
+              "d": "全球视频平台",
+              "t": "视频"
+            },
+            {
+              "n": "抖音",
+              "u": "https://www.douyin.com",
+              "d": "短视频",
+              "t": "短视频"
+            },
+            {
+              "n": "快手",
+              "u": "https://www.kuaishou.com",
+              "d": "短视频与直播",
+              "t": "短视频"
+            }
           ]
         },
         {
           "name": "音乐",
           "sites": [
-            { "n": "网易云音乐", "u": "https://music.163.com", "d": "歌单与评论", "t": "音乐" },
-            { "n": "QQ 音乐", "u": "https://y.qq.com", "d": "腾讯曲库", "t": "音乐" },
-            { "n": "酷狗音乐", "u": "https://www.kugou.com", "d": "曲库与 K 歌", "t": "音乐" },
-            { "n": "Spotify", "u": "https://open.spotify.com", "d": "全球流媒体", "t": "音乐" },
-            { "n": "Apple Music", "u": "https://music.apple.com", "d": "苹果音乐", "t": "音乐" },
-            { "n": "Bandcamp", "u": "https://bandcamp.com", "d": "独立音乐", "t": "音乐" },
-            { "n": "SoundCloud", "u": "https://soundcloud.com", "d": "创作者音乐", "t": "音乐" }
+            {
+              "n": "网易云音乐",
+              "u": "https://music.163.com",
+              "d": "歌单与评论",
+              "t": "音乐"
+            },
+            {
+              "n": "QQ 音乐",
+              "u": "https://y.qq.com",
+              "d": "腾讯曲库",
+              "t": "音乐"
+            },
+            {
+              "n": "酷狗音乐",
+              "u": "https://www.kugou.com",
+              "d": "曲库与 K 歌",
+              "t": "音乐"
+            },
+            {
+              "n": "Spotify",
+              "u": "https://open.spotify.com",
+              "d": "全球流媒体",
+              "t": "音乐"
+            },
+            {
+              "n": "Apple Music",
+              "u": "https://music.apple.com",
+              "d": "苹果音乐",
+              "t": "音乐"
+            },
+            {
+              "n": "Bandcamp",
+              "u": "https://bandcamp.com",
+              "d": "独立音乐",
+              "t": "音乐"
+            },
+            {
+              "n": "SoundCloud",
+              "u": "https://soundcloud.com",
+              "d": "创作者音乐",
+              "t": "音乐"
+            }
           ]
         },
         {
           "name": "播客",
           "sites": [
-            { "n": "小宇宙", "u": "https://www.xiaoyuzhoufm.com", "d": "中文播客社区", "t": "播客" },
-            { "n": "喜马拉雅", "u": "https://www.ximalaya.com", "d": "有声书与播客", "t": "音频" },
-            { "n": "Apple Podcasts", "u": "https://podcasts.apple.com", "d": "苹果播客", "t": "播客" },
-            { "n": "荔枝", "u": "https://www.lizhi.fm", "d": "音频直播", "t": "音频" },
-            { "n": "Spotify Podcasts", "u": "https://open.spotify.com/genre/podcasts-web", "d": "播客专区", "t": "播客" },
-            { "n": "Listen Notes", "u": "https://www.listennotes.com", "d": "播客搜索引擎", "t": "播客" }
+            {
+              "n": "小宇宙",
+              "u": "https://www.xiaoyuzhoufm.com",
+              "d": "中文播客社区",
+              "t": "播客"
+            },
+            {
+              "n": "喜马拉雅",
+              "u": "https://www.ximalaya.com",
+              "d": "有声书与播客",
+              "t": "音频"
+            },
+            {
+              "n": "Apple Podcasts",
+              "u": "https://podcasts.apple.com",
+              "d": "苹果播客",
+              "t": "播客"
+            },
+            {
+              "n": "荔枝",
+              "u": "https://www.lizhi.fm",
+              "d": "音频直播",
+              "t": "音频"
+            },
+            {
+              "n": "Spotify Podcasts",
+              "u": "https://open.spotify.com/genre/podcasts-web",
+              "d": "播客专区",
+              "t": "播客"
+            },
+            {
+              "n": "Listen Notes",
+              "u": "https://www.listennotes.com",
+              "d": "播客搜索引擎",
+              "t": "播客"
+            }
           ]
         },
         {
           "name": "直播",
           "sites": [
-            { "n": "虎牙直播", "u": "https://www.huya.com", "d": "游戏直播", "t": "直播" },
-            { "n": "斗鱼直播", "u": "https://www.douyu.com", "d": "游戏与娱乐", "t": "直播" },
-            { "n": "Twitch", "u": "https://www.twitch.tv", "d": "全球游戏直播", "t": "直播" },
-            { "n": "B 站直播", "u": "https://live.bilibili.com", "d": "二次元直播", "t": "直播" },
-            { "n": "YouTube Live", "u": "https://www.youtube.com/live", "d": "全球直播", "t": "直播" },
-            { "n": "抖音直播", "u": "https://live.douyin.com", "d": "电商与娱乐直播", "t": "直播" }
+            {
+              "n": "虎牙直播",
+              "u": "https://www.huya.com",
+              "d": "游戏直播",
+              "t": "直播"
+            },
+            {
+              "n": "斗鱼直播",
+              "u": "https://www.douyu.com",
+              "d": "游戏与娱乐",
+              "t": "直播"
+            },
+            {
+              "n": "Twitch",
+              "u": "https://www.twitch.tv",
+              "d": "全球游戏直播",
+              "t": "直播"
+            },
+            {
+              "n": "B 站直播",
+              "u": "https://live.bilibili.com",
+              "d": "二次元直播",
+              "t": "直播"
+            },
+            {
+              "n": "YouTube Live",
+              "u": "https://www.youtube.com/live",
+              "d": "全球直播",
+              "t": "直播"
+            },
+            {
+              "n": "抖音直播",
+              "u": "https://live.douyin.com",
+              "d": "电商与娱乐直播",
+              "t": "直播"
+            }
           ]
         }
       ]
@@ -441,48 +1656,183 @@
         {
           "name": "综合电商",
           "sites": [
-            { "n": "淘宝", "u": "https://www.taobao.com", "d": "阿里综合电商", "t": "电商" },
-            { "n": "天猫", "u": "https://www.tmall.com", "d": "品牌旗舰店", "t": "电商" },
-            { "n": "京东", "u": "https://www.jd.com", "d": "自营与物流", "t": "电商" },
-            { "n": "拼多多", "u": "https://www.pinduoduo.com", "d": "低价拼团", "t": "电商" },
-            { "n": "1688", "u": "https://www.1688.com", "d": "批发采购", "t": "批发" },
-            { "n": "亚马逊", "u": "https://www.amazon.cn", "d": "海外购", "t": "电商" },
-            { "n": "苏宁易购", "u": "https://www.suning.com", "d": "家电 3C", "t": "电商" },
-            { "n": "唯品会", "u": "https://www.vip.com", "d": "品牌特卖", "t": "电商" }
+            {
+              "n": "淘宝",
+              "u": "https://www.taobao.com",
+              "d": "阿里综合电商",
+              "t": "电商"
+            },
+            {
+              "n": "天猫",
+              "u": "https://www.tmall.com",
+              "d": "品牌旗舰店",
+              "t": "电商"
+            },
+            {
+              "n": "京东",
+              "u": "https://www.jd.com",
+              "d": "自营与物流",
+              "t": "电商"
+            },
+            {
+              "n": "拼多多",
+              "u": "https://www.pinduoduo.com",
+              "d": "低价拼团",
+              "t": "电商"
+            },
+            {
+              "n": "1688",
+              "u": "https://www.1688.com",
+              "d": "批发采购",
+              "t": "批发"
+            },
+            {
+              "n": "亚马逊",
+              "u": "https://www.amazon.cn",
+              "d": "海外购",
+              "t": "电商"
+            },
+            {
+              "n": "苏宁易购",
+              "u": "https://www.suning.com",
+              "d": "家电 3C",
+              "t": "电商"
+            },
+            {
+              "n": "唯品会",
+              "u": "https://www.vip.com",
+              "d": "品牌特卖",
+              "t": "电商"
+            }
           ]
         },
         {
           "name": "数码比价",
           "sites": [
-            { "n": "什么值得买", "u": "https://www.smzdm.com", "d": "优惠与评测", "t": "导购" },
-            { "n": "中关村在线", "u": "https://www.zol.com.cn", "d": "数码参数报价", "t": "评测" },
-            { "n": "太平洋电脑网", "u": "https://www.pconline.com.cn", "d": "硬件资讯", "t": "评测" },
-            { "n": "慢慢买", "u": "https://www.manmanbuy.com", "d": "历史价格查询", "t": "比价" },
-            { "n": "京东排行榜", "u": "https://top.jd.com", "d": "销量榜", "t": "榜单" },
-            { "n": "CamelCamelCamel", "u": "https://camelcamelcamel.com", "d": "亚马逊历史价格", "t": "比价" }
+            {
+              "n": "什么值得买",
+              "u": "https://www.smzdm.com",
+              "d": "优惠与评测",
+              "t": "导购"
+            },
+            {
+              "n": "中关村在线",
+              "u": "https://www.zol.com.cn",
+              "d": "数码参数报价",
+              "t": "评测"
+            },
+            {
+              "n": "太平洋电脑网",
+              "u": "https://www.pconline.com.cn",
+              "d": "硬件资讯",
+              "t": "评测"
+            },
+            {
+              "n": "慢慢买",
+              "u": "https://www.manmanbuy.com",
+              "d": "历史价格查询",
+              "t": "比价"
+            },
+            {
+              "n": "京东排行榜",
+              "u": "https://top.jd.com",
+              "d": "销量榜",
+              "t": "榜单"
+            },
+            {
+              "n": "CamelCamelCamel",
+              "u": "https://camelcamelcamel.com",
+              "d": "亚马逊历史价格",
+              "t": "比价"
+            }
           ]
         },
         {
           "name": "图书",
           "sites": [
-            { "n": "当当", "u": "https://www.dangdang.com", "d": "中文图书电商", "t": "图书" },
-            { "n": "京东图书", "u": "https://book.jd.com", "d": "自营图书", "t": "图书" },
-            { "n": "豆瓣读书", "u": "https://book.douban.com", "d": "评分与书评", "t": "书评" },
-            { "n": "孔夫子旧书网", "u": "https://www.kongfz.com", "d": "二手与绝版书", "t": "二手" },
-            { "n": "微信读书", "u": "https://weread.qq.com", "d": "电子书阅读", "t": "阅读" },
-            { "n": "多看阅读", "u": "https://www.duokan.com", "d": "电子书", "t": "阅读" },
-            { "n": "Goodreads", "u": "https://www.goodreads.com", "d": "英文书评社区", "t": "书评" }
+            {
+              "n": "当当",
+              "u": "https://www.dangdang.com",
+              "d": "中文图书电商",
+              "t": "图书"
+            },
+            {
+              "n": "京东图书",
+              "u": "https://book.jd.com",
+              "d": "自营图书",
+              "t": "图书"
+            },
+            {
+              "n": "豆瓣读书",
+              "u": "https://book.douban.com",
+              "d": "评分与书评",
+              "t": "书评"
+            },
+            {
+              "n": "孔夫子旧书网",
+              "u": "https://www.kongfz.com",
+              "d": "二手与绝版书",
+              "t": "二手"
+            },
+            {
+              "n": "微信读书",
+              "u": "https://weread.qq.com",
+              "d": "电子书阅读",
+              "t": "阅读"
+            },
+            {
+              "n": "多看阅读",
+              "u": "https://www.duokan.com",
+              "d": "电子书",
+              "t": "阅读"
+            },
+            {
+              "n": "Goodreads",
+              "u": "https://www.goodreads.com",
+              "d": "英文书评社区",
+              "t": "书评"
+            }
           ]
         },
         {
           "name": "生鲜日用",
           "sites": [
-            { "n": "盒马", "u": "https://www.freshhema.com", "d": "生鲜 30 分钟达", "t": "生鲜" },
-            { "n": "叮咚买菜", "u": "https://www.100.me", "d": "前置仓生鲜", "t": "生鲜" },
-            { "n": "山姆会员店", "u": "https://www.samsclub.cn", "d": "会员制仓储", "t": "商超" },
-            { "n": "京东超市", "u": "https://chaoshi.jd.com", "d": "日用百货", "t": "商超" },
-            { "n": "天猫超市", "u": "https://chaoshi.tmall.com", "d": "日用快消", "t": "商超" },
-            { "n": "美团优选", "u": "https://www.meituan.com/", "d": "社区团购", "t": "团购" }
+            {
+              "n": "盒马",
+              "u": "https://www.freshhema.com",
+              "d": "生鲜 30 分钟达",
+              "t": "生鲜"
+            },
+            {
+              "n": "叮咚买菜",
+              "u": "https://www.100.me",
+              "d": "前置仓生鲜",
+              "t": "生鲜"
+            },
+            {
+              "n": "山姆会员店",
+              "u": "https://www.samsclub.cn",
+              "d": "会员制仓储",
+              "t": "商超"
+            },
+            {
+              "n": "京东超市",
+              "u": "https://chaoshi.jd.com",
+              "d": "日用百货",
+              "t": "商超"
+            },
+            {
+              "n": "天猫超市",
+              "u": "https://chaoshi.tmall.com",
+              "d": "日用快消",
+              "t": "商超"
+            },
+            {
+              "n": "美团优选",
+              "u": "https://www.meituan.com/",
+              "d": "社区团购",
+              "t": "团购"
+            }
           ]
         }
       ]
@@ -493,60 +1843,230 @@
         {
           "name": "PDF",
           "sites": [
-            { "n": "iLovePDF", "u": "https://www.ilovepdf.com/zh-cn", "d": "合并拆分压缩", "t": "PDF" },
-            { "n": "Smallpdf", "u": "https://smallpdf.com/cn", "d": "PDF 全能工具", "t": "PDF" },
-            { "n": "PDF24", "u": "https://tools.pdf24.org/zh/", "d": "免费离线可用", "t": "PDF" },
-            { "n": "福昕 PDF", "u": "https://www.foxitsoftware.cn", "d": "国产 PDF 编辑器", "t": "PDF" },
-            { "n": "WPS PDF", "u": "https://pdf.wps.cn", "d": "在线转换与编辑", "t": "PDF" },
-            { "n": "Stirling PDF", "u": "https://stirlingpdf.io", "d": "开源自托管 PDF", "t": "PDF" }
+            {
+              "n": "iLovePDF",
+              "u": "https://www.ilovepdf.com/zh-cn",
+              "d": "合并拆分压缩",
+              "t": "PDF"
+            },
+            {
+              "n": "Smallpdf",
+              "u": "https://smallpdf.com/cn",
+              "d": "PDF 全能工具",
+              "t": "PDF"
+            },
+            {
+              "n": "PDF24",
+              "u": "https://tools.pdf24.org/zh/",
+              "d": "免费离线可用",
+              "t": "PDF"
+            },
+            {
+              "n": "福昕 PDF",
+              "u": "https://www.foxitsoftware.cn",
+              "d": "国产 PDF 编辑器",
+              "t": "PDF"
+            },
+            {
+              "n": "WPS PDF",
+              "u": "https://pdf.wps.cn",
+              "d": "在线转换与编辑",
+              "t": "PDF"
+            },
+            {
+              "n": "Stirling PDF",
+              "u": "https://stirlingpdf.io",
+              "d": "开源自托管 PDF",
+              "t": "PDF"
+            }
           ]
         },
         {
           "name": "图片",
           "sites": [
-            { "n": "TinyPNG", "u": "https://tinypng.com", "d": "批量压缩图片", "t": "压缩" },
-            { "n": "remove.bg", "u": "https://www.remove.bg/zh", "d": "一键抠图", "t": "抠图" },
-            { "n": "Squoosh", "u": "https://squoosh.app", "d": "谷歌图片压缩", "t": "压缩" },
-            { "n": "Photopea", "u": "https://www.photopea.com", "d": "在线 PS", "t": "编辑" },
-            { "n": "稿定抠图", "u": "https://koutu.gaoding.com", "d": "中文 AI 抠图", "t": "抠图" },
-            { "n": "Iloveimg", "u": "https://www.iloveimg.com/zh-cn", "d": "图片批量处理", "t": "编辑" },
-            { "n": "waifu2x", "u": "https://waifu2x.udp.jp", "d": "二次元放大降噪", "t": "增强" }
+            {
+              "n": "TinyPNG",
+              "u": "https://tinypng.com",
+              "d": "批量压缩图片",
+              "t": "压缩"
+            },
+            {
+              "n": "remove.bg",
+              "u": "https://www.remove.bg/zh",
+              "d": "一键抠图",
+              "t": "抠图"
+            },
+            {
+              "n": "Squoosh",
+              "u": "https://squoosh.app",
+              "d": "谷歌图片压缩",
+              "t": "压缩"
+            },
+            {
+              "n": "Photopea",
+              "u": "https://www.photopea.com",
+              "d": "在线 PS",
+              "t": "编辑"
+            },
+            {
+              "n": "稿定抠图",
+              "u": "https://koutu.gaoding.com",
+              "d": "中文 AI 抠图",
+              "t": "抠图"
+            },
+            {
+              "n": "Iloveimg",
+              "u": "https://www.iloveimg.com/zh-cn",
+              "d": "图片批量处理",
+              "t": "编辑"
+            },
+            {
+              "n": "waifu2x",
+              "u": "https://waifu2x.udp.jp",
+              "d": "二次元放大降噪",
+              "t": "增强"
+            }
           ]
         },
         {
           "name": "格式转换",
           "sites": [
-            { "n": "Convertio", "u": "https://convertio.co/zh/", "d": "300+ 格式互转", "t": "转换" },
-            { "n": "CloudConvert", "u": "https://cloudconvert.com", "d": "音视频文档转换", "t": "转换" },
-            { "n": "Zamzar", "u": "https://www.zamzar.com", "d": "老牌在线转换", "t": "转换" },
-            { "n": "HandBrake", "u": "https://handbrake.fr", "d": "开源视频转码", "t": "视频" },
-            { "n": "FFmpeg", "u": "https://ffmpeg.org", "d": "命令行音视频处理", "t": "视频" },
-            { "n": "Online Audio Converter", "u": "https://online-audio-converter.com", "d": "音频格式转换", "t": "转换" }
+            {
+              "n": "Convertio",
+              "u": "https://convertio.co/zh/",
+              "d": "300+ 格式互转",
+              "t": "转换"
+            },
+            {
+              "n": "CloudConvert",
+              "u": "https://cloudconvert.com",
+              "d": "音视频文档转换",
+              "t": "转换"
+            },
+            {
+              "n": "Zamzar",
+              "u": "https://www.zamzar.com",
+              "d": "老牌在线转换",
+              "t": "转换"
+            },
+            {
+              "n": "HandBrake",
+              "u": "https://handbrake.fr",
+              "d": "开源视频转码",
+              "t": "视频"
+            },
+            {
+              "n": "FFmpeg",
+              "u": "https://ffmpeg.org",
+              "d": "命令行音视频处理",
+              "t": "视频"
+            },
+            {
+              "n": "Online Audio Converter",
+              "u": "https://online-audio-converter.com",
+              "d": "音频格式转换",
+              "t": "转换"
+            }
           ]
         },
         {
           "name": "文本翻译",
           "sites": [
-            { "n": "DeepL", "u": "https://www.deepl.com/translator", "d": "高质机器翻译", "t": "翻译" },
-            { "n": "彩云小译", "u": "https://fanyi.caiyunapp.com", "d": "中英对照翻译", "t": "翻译" },
-            { "n": "Google 翻译", "u": "https://translate.google.com", "d": "多语言翻译", "t": "翻译" },
-            { "n": "QuillBot", "u": "https://quillbot.com", "d": "英文改写润色", "t": "写作" },
-            { "n": "Grammarly", "u": "https://www.grammarly.com", "d": "英文语法检查", "t": "写作" },
-            { "n": "草料二维码", "u": "https://cli.im", "d": "二维码生成", "t": "生成" },
-            { "n": "TextFixer", "u": "https://www.textfixer.com", "d": "大小写与去重", "t": "文本" },
-            { "n": "IT-Tools", "u": "https://it-tools.tech", "d": "开发者工具箱", "t": "工具箱" }
+            {
+              "n": "DeepL",
+              "u": "https://www.deepl.com/translator",
+              "d": "高质机器翻译",
+              "t": "翻译"
+            },
+            {
+              "n": "彩云小译",
+              "u": "https://fanyi.caiyunapp.com",
+              "d": "中英对照翻译",
+              "t": "翻译"
+            },
+            {
+              "n": "Google 翻译",
+              "u": "https://translate.google.com",
+              "d": "多语言翻译",
+              "t": "翻译"
+            },
+            {
+              "n": "QuillBot",
+              "u": "https://quillbot.com",
+              "d": "英文改写润色",
+              "t": "写作"
+            },
+            {
+              "n": "Grammarly",
+              "u": "https://www.grammarly.com",
+              "d": "英文语法检查",
+              "t": "写作"
+            },
+            {
+              "n": "草料二维码",
+              "u": "https://cli.im",
+              "d": "二维码生成",
+              "t": "生成"
+            },
+            {
+              "n": "TextFixer",
+              "u": "https://www.textfixer.com",
+              "d": "大小写与去重",
+              "t": "文本"
+            },
+            {
+              "n": "IT-Tools",
+              "u": "https://it-tools.tech",
+              "d": "开发者工具箱",
+              "t": "工具箱"
+            }
           ]
         },
         {
           "name": "网络检测",
           "sites": [
-            { "n": "Speedtest", "u": "https://www.speedtest.net", "d": "测网速", "t": "网络" },
-            { "n": "ITDOG", "u": "https://www.itdog.cn", "d": "多地 ping 与测速", "t": "网络" },
-            { "n": "ping.pe", "u": "https://ping.pe", "d": "全球节点 ping", "t": "网络" },
-            { "n": "IPinfo", "u": "https://ipinfo.io", "d": "IP 归属查询", "t": "网络" },
-            { "n": "DNS 查询", "u": "https://dns.google", "d": "谷歌 DNS 解析", "t": "网络" },
-            { "n": "SSL Labs", "u": "https://www.ssllabs.com/ssltest/", "d": "证书与协议检测", "t": "安全" },
-            { "n": "DownDetector", "u": "https://downdetector.com", "d": "服务故障监测", "t": "监测" }
+            {
+              "n": "Speedtest",
+              "u": "https://www.speedtest.net",
+              "d": "测网速",
+              "t": "网络"
+            },
+            {
+              "n": "ITDOG",
+              "u": "https://www.itdog.cn",
+              "d": "多地 ping 与测速",
+              "t": "网络"
+            },
+            {
+              "n": "ping.pe",
+              "u": "https://ping.pe",
+              "d": "全球节点 ping",
+              "t": "网络"
+            },
+            {
+              "n": "IPinfo",
+              "u": "https://ipinfo.io",
+              "d": "IP 归属查询",
+              "t": "网络"
+            },
+            {
+              "n": "DNS 查询",
+              "u": "https://dns.google",
+              "d": "谷歌 DNS 解析",
+              "t": "网络"
+            },
+            {
+              "n": "SSL Labs",
+              "u": "https://www.ssllabs.com/ssltest/",
+              "d": "证书与协议检测",
+              "t": "安全"
+            },
+            {
+              "n": "DownDetector",
+              "u": "https://downdetector.com",
+              "d": "服务故障监测",
+              "t": "监测"
+            }
           ]
         }
       ]
@@ -557,48 +2077,183 @@
         {
           "name": "招聘",
           "sites": [
-            { "n": "BOSS 直聘", "u": "https://www.zhipin.com", "d": "直聊找工作", "t": "招聘" },
-            { "n": "拉勾", "u": "https://www.lagou.com", "d": "互联网岗位", "t": "招聘" },
-            { "n": "猎聘", "u": "https://www.liepin.com", "d": "中高端职位", "t": "招聘" },
-            { "n": "智联招聘", "u": "https://www.zhaopin.com", "d": "综合招聘", "t": "招聘" },
-            { "n": "前程无忧", "u": "https://www.51job.com", "d": "老牌招聘平台", "t": "招聘" },
-            { "n": "LinkedIn", "u": "https://www.linkedin.com", "d": "职业社交", "t": "社交" },
-            { "n": "脉脉", "u": "https://maimai.cn", "d": "职场实名社区", "t": "社交" },
-            { "n": "看准网", "u": "https://www.kanzhun.com", "d": "公司点评与薪资", "t": "点评" }
+            {
+              "n": "BOSS 直聘",
+              "u": "https://www.zhipin.com",
+              "d": "直聊找工作",
+              "t": "招聘"
+            },
+            {
+              "n": "拉勾",
+              "u": "https://www.lagou.com",
+              "d": "互联网岗位",
+              "t": "招聘"
+            },
+            {
+              "n": "猎聘",
+              "u": "https://www.liepin.com",
+              "d": "中高端职位",
+              "t": "招聘"
+            },
+            {
+              "n": "智联招聘",
+              "u": "https://www.zhaopin.com",
+              "d": "综合招聘",
+              "t": "招聘"
+            },
+            {
+              "n": "前程无忧",
+              "u": "https://www.51job.com",
+              "d": "老牌招聘平台",
+              "t": "招聘"
+            },
+            {
+              "n": "LinkedIn",
+              "u": "https://www.linkedin.com",
+              "d": "职业社交",
+              "t": "社交"
+            },
+            {
+              "n": "脉脉",
+              "u": "https://maimai.cn",
+              "d": "职场实名社区",
+              "t": "社交"
+            },
+            {
+              "n": "看准网",
+              "u": "https://www.kanzhun.com",
+              "d": "公司点评与薪资",
+              "t": "点评"
+            }
           ]
         },
         {
           "name": "简历",
           "sites": [
-            { "n": "超级简历", "u": "https://www.wondercv.com", "d": "在线简历制作", "t": "简历" },
-            { "n": "五百丁", "u": "https://www.500d.me", "d": "简历模板", "t": "简历" },
-            { "n": "知页简历", "u": "https://www.zhiyeapp.com", "d": "模板与求职助手", "t": "简历" },
-            { "n": "Canva 简历", "u": "https://www.canva.cn/resumes/templates/", "d": "设计感模板", "t": "简历" },
-            { "n": "Resume.io", "u": "https://resume.io", "d": "英文简历生成", "t": "简历" },
-            { "n": "Overleaf", "u": "https://www.overleaf.com", "d": "LaTeX 简历", "t": "排版" }
+            {
+              "n": "超级简历",
+              "u": "https://www.wondercv.com",
+              "d": "在线简历制作",
+              "t": "简历"
+            },
+            {
+              "n": "五百丁",
+              "u": "https://www.500d.me",
+              "d": "简历模板",
+              "t": "简历"
+            },
+            {
+              "n": "知页简历",
+              "u": "https://www.zhiyeapp.com",
+              "d": "模板与求职助手",
+              "t": "简历"
+            },
+            {
+              "n": "Canva 简历",
+              "u": "https://www.canva.cn/resumes/templates/",
+              "d": "设计感模板",
+              "t": "简历"
+            },
+            {
+              "n": "Resume.io",
+              "u": "https://resume.io",
+              "d": "英文简历生成",
+              "t": "简历"
+            },
+            {
+              "n": "Overleaf",
+              "u": "https://www.overleaf.com",
+              "d": "LaTeX 简历",
+              "t": "排版"
+            }
           ]
         },
         {
           "name": "远程外包",
           "sites": [
-            { "n": "电鸭社区", "u": "https://eleduck.com", "d": "远程工作机会", "t": "远程" },
-            { "n": "RemoteOK", "u": "https://remoteok.com", "d": "全球远程岗位", "t": "远程" },
-            { "n": "Upwork", "u": "https://www.upwork.com", "d": "自由职业接单", "t": "外包" },
-            { "n": "Fiverr", "u": "https://www.fiverr.com", "d": "技能服务市场", "t": "外包" },
-            { "n": "程序员客栈", "u": "https://www.proginn.com", "d": "国内开发者外包", "t": "外包" },
-            { "n": "We Work Remotely", "u": "https://weworkremotely.com", "d": "远程职位板", "t": "远程" },
-            { "n": "Toptal", "u": "https://www.toptal.com", "d": "高端自由职业", "t": "外包" }
+            {
+              "n": "电鸭社区",
+              "u": "https://eleduck.com",
+              "d": "远程工作机会",
+              "t": "远程"
+            },
+            {
+              "n": "RemoteOK",
+              "u": "https://remoteok.com",
+              "d": "全球远程岗位",
+              "t": "远程"
+            },
+            {
+              "n": "Upwork",
+              "u": "https://www.upwork.com",
+              "d": "自由职业接单",
+              "t": "外包"
+            },
+            {
+              "n": "Fiverr",
+              "u": "https://www.fiverr.com",
+              "d": "技能服务市场",
+              "t": "外包"
+            },
+            {
+              "n": "程序员客栈",
+              "u": "https://www.proginn.com",
+              "d": "国内开发者外包",
+              "t": "外包"
+            },
+            {
+              "n": "We Work Remotely",
+              "u": "https://weworkremotely.com",
+              "d": "远程职位板",
+              "t": "远程"
+            },
+            {
+              "n": "Toptal",
+              "u": "https://www.toptal.com",
+              "d": "高端自由职业",
+              "t": "外包"
+            }
           ]
         },
         {
           "name": "效率提升",
           "sites": [
-            { "n": "幕布", "u": "https://mubu.com", "d": "大纲笔记转导图", "t": "导图" },
-            { "n": "MindNode", "u": "https://www.mindnode.com", "d": "思维导图", "t": "导图" },
-            { "n": "XMind", "u": "https://xmind.cn", "d": "中文思维导图", "t": "导图" },
-            { "n": "ProcessOn", "u": "https://www.processon.com", "d": "流程图与导图", "t": "导图" },
-            { "n": "Excalidraw", "u": "https://excalidraw.com", "d": "手绘白板", "t": "白板" },
-            { "n": "draw.io", "u": "https://app.diagrams.net", "d": "开源流程图", "t": "图表" }
+            {
+              "n": "幕布",
+              "u": "https://mubu.com",
+              "d": "大纲笔记转导图",
+              "t": "导图"
+            },
+            {
+              "n": "MindNode",
+              "u": "https://www.mindnode.com",
+              "d": "思维导图",
+              "t": "导图"
+            },
+            {
+              "n": "XMind",
+              "u": "https://xmind.cn",
+              "d": "中文思维导图",
+              "t": "导图"
+            },
+            {
+              "n": "ProcessOn",
+              "u": "https://www.processon.com",
+              "d": "流程图与导图",
+              "t": "导图"
+            },
+            {
+              "n": "Excalidraw",
+              "u": "https://excalidraw.com",
+              "d": "手绘白板",
+              "t": "白板"
+            },
+            {
+              "n": "draw.io",
+              "u": "https://app.diagrams.net",
+              "d": "开源流程图",
+              "t": "图表"
+            }
           ]
         }
       ]
@@ -609,45 +2264,181 @@
         {
           "name": "出行",
           "sites": [
-            { "n": "12306", "u": "https://www.12306.cn", "d": "铁路购票", "t": "交通" },
-            { "n": "携程", "u": "https://www.ctrip.com", "d": "机票酒店", "t": "旅行" },
-            { "n": "飞猪", "u": "https://www.fliggy.com", "d": "阿里旅行", "t": "旅行" },
-            { "n": "去哪儿", "u": "https://www.qunar.com", "d": "比价与机票", "t": "旅行" },
-            { "n": "马蜂窝", "u": "https://www.mafengwo.cn", "d": "游记与攻略", "t": "攻略" },
-            { "n": "航旅纵横", "u": "https://www.umetrip.com", "d": "航班动态", "t": "航班" },
-            { "n": "Booking", "u": "https://www.booking.com", "d": "全球酒店", "t": "酒店" }
+            {
+              "n": "12306",
+              "u": "https://www.12306.cn",
+              "d": "铁路购票",
+              "t": "交通"
+            },
+            {
+              "n": "携程",
+              "u": "https://www.ctrip.com",
+              "d": "机票酒店",
+              "t": "旅行"
+            },
+            {
+              "n": "飞猪",
+              "u": "https://www.fliggy.com",
+              "d": "阿里旅行",
+              "t": "旅行"
+            },
+            {
+              "n": "去哪儿",
+              "u": "https://www.qunar.com",
+              "d": "比价与机票",
+              "t": "旅行"
+            },
+            {
+              "n": "马蜂窝",
+              "u": "https://www.mafengwo.cn",
+              "d": "游记与攻略",
+              "t": "攻略"
+            },
+            {
+              "n": "航旅纵横",
+              "u": "https://www.umetrip.com",
+              "d": "航班动态",
+              "t": "航班"
+            },
+            {
+              "n": "Booking",
+              "u": "https://www.booking.com",
+              "d": "全球酒店",
+              "t": "酒店"
+            }
           ]
         },
         {
           "name": "地图导航",
           "sites": [
-            { "n": "高德地图", "u": "https://www.amap.com", "d": "导航与路况", "t": "地图" },
-            { "n": "百度地图", "u": "https://map.baidu.com", "d": "地点与路线", "t": "地图" },
-            { "n": "腾讯地图", "u": "https://map.qq.com", "d": "腾讯导航", "t": "地图" },
-            { "n": "Google Maps", "u": "https://www.google.com/maps", "d": "全球地图", "t": "地图" },
-            { "n": "OpenStreetMap", "u": "https://www.openstreetmap.org", "d": "开放地图数据", "t": "地图" }
+            {
+              "n": "高德地图",
+              "u": "https://www.amap.com",
+              "d": "导航与路况",
+              "t": "地图"
+            },
+            {
+              "n": "百度地图",
+              "u": "https://map.baidu.com",
+              "d": "地点与路线",
+              "t": "地图"
+            },
+            {
+              "n": "腾讯地图",
+              "u": "https://map.qq.com",
+              "d": "腾讯导航",
+              "t": "地图"
+            },
+            {
+              "n": "Google Maps",
+              "u": "https://www.google.com/maps",
+              "d": "全球地图",
+              "t": "地图"
+            },
+            {
+              "n": "OpenStreetMap",
+              "u": "https://www.openstreetmap.org",
+              "d": "开放地图数据",
+              "t": "地图"
+            }
           ]
         },
         {
           "name": "外卖团购",
           "sites": [
-            { "n": "美团", "u": "https://www.meituan.com", "d": "外卖团购到店", "t": "本地" },
-            { "n": "饿了么", "u": "https://www.ele.me", "d": "外卖配送", "t": "外卖" },
-            { "n": "大众点评", "u": "https://www.dianping.com", "d": "餐厅评价", "t": "点评" },
-            { "n": "抖音生活服务", "u": "https://www.douyin.com/", "d": "团购与探店", "t": "本地" },
-            { "n": "猫眼电影", "u": "https://www.maoyan.com", "d": "电影购票", "t": "票务" },
-            { "n": "大麦网", "u": "https://www.damai.cn", "d": "演出票务", "t": "票务" }
+            {
+              "n": "美团",
+              "u": "https://www.meituan.com",
+              "d": "外卖团购到店",
+              "t": "本地"
+            },
+            {
+              "n": "饿了么",
+              "u": "https://www.ele.me",
+              "d": "外卖配送",
+              "t": "外卖"
+            },
+            {
+              "n": "大众点评",
+              "u": "https://www.dianping.com",
+              "d": "餐厅评价",
+              "t": "点评"
+            },
+            {
+              "n": "抖音生活服务",
+              "u": "https://www.douyin.com/",
+              "d": "团购与探店",
+              "t": "本地"
+            },
+            {
+              "n": "猫眼电影",
+              "u": "https://www.maoyan.com",
+              "d": "电影购票",
+              "t": "票务"
+            },
+            {
+              "n": "大麦网",
+              "u": "https://www.damai.cn",
+              "d": "演出票务",
+              "t": "票务"
+            }
           ]
         },
         {
           "name": "房产租房",
           "sites": [
-            { "n": "贝壳找房", "u": "https://www.ke.com", "d": "真房源与成交价", "t": "房产" },
-            { "n": "链家", "u": "https://www.lianjia.com", "d": "二手房与租赁", "t": "房产" },
-            { "n": "安居客", "u": "https://www.anjuke.com", "d": "租房买房信息", "t": "房产" },
-            { "n": "自如", "u": "https://www.ziroom.com", "d": "长租公寓", "t": "租房" },
-            { "n": "豆瓣租房小组", "u": "https://www.douban.com/group/fangzi/", "d": "个人转租合租", "t": "租房" },
-            { "n": "房天下", "u": "https://www.fang.com", "d": "新房二手房", "t": "房产" }
+            {
+              "n": "贝壳找房",
+              "u": "https://www.ke.com",
+              "d": "真房源与成交价",
+              "t": "房产"
+            },
+            {
+              "n": "链家",
+              "u": "https://www.lianjia.com",
+              "d": "二手房与租赁",
+              "t": "房产"
+            },
+            {
+              "n": "安居客",
+              "u": "https://www.anjuke.com",
+              "d": "租房买房信息",
+              "t": "房产"
+            },
+            {
+              "n": "自如",
+              "u": "https://www.ziroom.com",
+              "d": "长租公寓",
+              "t": "租房"
+            },
+            {
+              "n": "豆瓣租房小组",
+              "u": "https://www.douban.com/group/fangzi/",
+              "d": "个人转租合租",
+              "t": "租房"
+            },
+            {
+              "n": "房天下",
+              "u": "https://www.fang.com",
+              "d": "新房二手房",
+              "t": "房产"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OPC",
+      "subs": [
+        {
+          "name": "一人公司",
+          "sites": [
+            {
+              "n": "OPC Vault",
+              "u": "https://github.com/muyanaicode/opc-vault",
+              "d": "本地优先、端到端加密的一人公司「公司主体·账套」金库；开源自托管免费",
+              "t": "OPC/财税"
+            }
           ]
         }
       ]
